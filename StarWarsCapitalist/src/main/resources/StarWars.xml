@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<world
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
+    <name></name>
+    <logo></logo>
+    <money></money>
+    <score></score>
+    <totalangels></totalangels>
+    <activeangels></activeangels>
+    <angelbonus></angelbonus>
+    <lastupdate></lastupdate>
+    <products>
+        <product>
+            <id>1</id>
+            <name>Jerry</name>
+            <logo>icones/blaster.jpg</logo>
+            <cout>4</cout>
+            <croissance>1.07</croissance>
+            <revenu>1</revenu>
+            <vitesse>0.5</vitesse>
+            <quantite>5000</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>False</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>seuil 50</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+                <pallier>
+                    <name>seuil 75</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>75</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+                <pallier>
+                    <name>seuil 150</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>150</seuil>
+                    <idcible>1</idcible>
+                    <ratio>1</ratio>
+                    <typeratio>ange</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>2</id>
+            <name>Portal gun</name>
+            <logo>icones/blaster.jpg</logo>
+            <cout>60</cout>
+            <croissance>1.15</croissance>
+            <revenu>60</revenu>
+            <vitesse>3</vitesse>
+            <quantite>5000</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked>False</managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name>seuil 50</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>50</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+                <pallier>
+                    <name>seuil 75</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>75</seuil>
+                    <idcible>1</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+                <pallier>
+                    <name>seuil 150</name>
+                    <logo>icones/blaster.jpg</logo>
+                    <seuil>150</seuil>
+                    <idcible>1</idcible>
+                    <ratio>1</ratio>
+                    <typeratio>ange</typeratio>
+                    <unlocked>False</unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id></id>
+            <name></name>
+            <logo></logo>
+            <cout></cout>
+            <croissance></croissance>
+            <revenu></revenu>
+            <vitesse></vitesse>
+            <quantite></quantite>
+            <timeleft></timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+    </products>
+    <allunlocks>
+        <pallier>
+            <name></name>
+            <logo></logo>
+            <seuil></seuil>
+            <idcible></idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name></name>
+            <logo></logo>
+            <seuil></seuil>
+            <idcible></idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked></unlocked>
+        </pallier>
+        <pallier>
+            <name></name>
+            <logo></logo>
+            <seuil></seuil>
+            <idcible></idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked></unlocked>
+        </pallier>
+    </allunlocks>
+    <upgrades>
+        <pallier>
+            <name>Jerry profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>250000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Portal gun profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>450000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Jerry profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>10000000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Portal gun profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>15000000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>1000000000000</seuil>
+            <idcible>0</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+    </upgrades>
+    <angelupgrades>
+        <pallier>
+            <name>Angel sacrifice</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>10000</seuil>
+            <idcible>0</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Angel sacrifice</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>100000</seuil>
+            <idcible>-1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ange</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Angel rebellion</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>100000000000</seuil>
+            <idcible>-1</idcible>
+            <ratio>2</ratio>
+            <typeratio>ange</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+    </angelupgrades>
+    <managers>
+        <pallier>
+            <name>Beth</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>1000</seuil>
+            <idcible>1</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Rick</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>15000</seuil>
+            <idcible>2</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+    </managers>
+
+</world>
