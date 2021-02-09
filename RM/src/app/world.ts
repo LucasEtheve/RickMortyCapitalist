@@ -1,7 +1,7 @@
 
 export class World {
     name : string =""; 
-    logo : string="";
+    logo : string="icones/blaster.jpg";
     money: number=0; 
     score: number=0; 
     totalangels: number=0;
@@ -35,7 +35,7 @@ export class Product {
     timeleft: number=0;
     managerUnlocked: boolean=false;
     palliers : { "pallier" : Pallier[]};
-    
+
     constructor() {
         this.palliers = { "pallier":[ ] };
     }

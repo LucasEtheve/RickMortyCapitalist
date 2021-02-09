@@ -9,8 +9,8 @@ and open the template in the editor.
 <world
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
-    <name></name>
-    <logo></logo>
+    <name>Rick</name>
+    <logo>icones/blaster.jpg</logo>
     <money></money>
     <score></score>
     <totalangels></totalangels>
