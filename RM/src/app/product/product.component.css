@@ -1,0 +1,9 @@
+.round {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%
+  }
+.progressbar{
+  height: 30px;
+}
+  

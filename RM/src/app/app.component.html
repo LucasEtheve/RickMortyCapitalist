@@ -1,7 +1,9 @@
 <div class="header">
   <div> logo monde
-    <span><img [attr.src]="server+world.logo" /> </span>
-    <span id="worldname"> {{world.name}} </span>
+    <span><img [attr.src]="server+world?.logo" class="round"/> </span>
+    <span id="worldname"> {{world?.name}} </span>
+    <span [innerHTML]="world.money | bigvalue"> </span>
+    <button (click)="cycle()">{{qtmulti}}</button>
   </div>
   <div> <span id="worldname"> argent : {{world.money}} </span> </div>
   <div> multiplicateur </div>
@@ -10,7 +12,9 @@
 <div class="main">
   <div> liste des boutons de menu </div>
   <div class="product">
-    <div> premier produit </div>
+    <div>
+      <app-product [prod]="world.products.product[0]" class="product col-md-6" (notifyProduction)="onProductionDone($event)" [qtmulti]="qtmulti" [money]="world.money"></app-product>
+    </div>
     <div> second produit </div>
     <div> troisième produit </div>
     <div> quatrième produit </div>

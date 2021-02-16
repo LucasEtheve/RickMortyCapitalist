@@ -11,7 +11,7 @@ and open the template in the editor.
     xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
     <name>Rick</name>
     <logo>icones/blaster.jpg</logo>
-    <money></money>
+    <money>122</money>
     <score></score>
     <totalangels></totalangels>
     <activeangels></activeangels>
@@ -25,7 +25,7 @@ and open the template in the editor.
             <cout>4</cout>
             <croissance>1.07</croissance>
             <revenu>1</revenu>
-            <vitesse>0.5</vitesse>
+            <vitesse>5000</vitesse>
             <quantite>5000</quantite>
             <timeleft>0</timeleft>
             <managerUnlocked>False</managerUnlocked>

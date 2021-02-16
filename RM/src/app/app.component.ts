@@ -10,8 +10,29 @@ import { World, Product, Pallier } from './world';
 export class AppComponent {
   title = 'RM';
   world: World = new World();
-  server: string;
+  server: string="";
+  qtmulti:string="X1";
+  
+  onProductionDone(product:any){
+    this.world.money+=product.revenu;
+  }
 
+  cycle(){
+    switch(this.qtmulti){
+        case "X1":
+          this.qtmulti="X10";
+          break;
+        case "X10":
+          this.qtmulti="X100";
+          break;
+        case "X100":
+          this.qtmulti="XMAX";
+          break;
+        case  "XMAX":
+          this.qtmulti="X1";
+          break;
+    }
+  }
   constructor(private service: RestserviceService) {
     this.server = service.getServer(); 
     service.getWorld().then(
