@@ -14,7 +14,8 @@ export class AppComponent {
   qtmulti:string="X1";
   
   onProductionDone(product:any){
-    this.world.money+=product.revenu;
+    this.world.money+= product.quantite * product.revenu;
+    this.world.score+= product.quantite * product.revenu;
   }
 
   cycle(){

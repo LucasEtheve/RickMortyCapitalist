@@ -82,7 +82,15 @@ export class ProductComponent implements OnInit {
     console.log(i); */
     console.log(this._money);
     let qtemax = (Math.log(1 - ((this._money * (1 - this.product.croissance))/ this.product.cout))/Math.log(this.product.croissance))-1;
-    this.quantitemax = Math.floor(qtemax);
+    if (qtemax<0){
+      this.quantitemax = 0;
+    }
+    else{
+      this.quantitemax = Math.floor(qtemax);
+    }
   }
 
+  achat(){
+    console.log("achat");
+  }
 }
