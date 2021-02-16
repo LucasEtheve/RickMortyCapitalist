@@ -21,7 +21,7 @@ and open the template in the editor.
         <product>
             <id>1</id>
             <name>Jerry</name>
-            <logo>icones/blaster.jpg</logo>
+            <logo>icones/Jerry.png</logo>
             <cout>4</cout>
             <croissance>1.07</croissance>
             <revenu>1</revenu>
@@ -61,8 +61,8 @@ and open the template in the editor.
         </product>
         <product>
             <id>2</id>
-            <name>Portal gun</name>
-            <logo>icones/blaster.jpg</logo>
+            <name>Mega Seed</name>
+            <logo>icones/MegaSeed.png</logo>
             <cout>60</cout>
             <croissance>1.15</croissance>
             <revenu>60</revenu>
@@ -101,15 +101,261 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id></id>
-            <name></name>
-            <logo></logo>
-            <cout></cout>
-            <croissance></croissance>
-            <revenu></revenu>
-            <vitesse></vitesse>
-            <quantite></quantite>
-            <timeleft></timeleft>
+            <id>2</id>
+            <name>Boite a Larbins</name>
+            <logo>icones/BoiteALarbins.png</logo>
+            <cout>720</cout>
+            <croissance>1.14</croissance>
+            <revenu>540</revenu>
+            <vitesse>6000</vitesse>
+            <quantite>5000</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>3</id>
+            <name>Laser Gun</name>
+            <logo>icones/LaserGun.png</logo>
+            <cout>8640</cout>
+            <croissance>1.13</croissance>
+            <revenu>4320</revenu>
+            <vitesse>12000</vitesse>
+            <quantite>5000</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>4</id>
+            <name>Kalaxian Crystals</name>
+            <logo>icones/KalaxianCrystals.png</logo>
+            <cout>103680</cout>
+            <croissance>1.12</croissance>
+            <revenu>51840</revenu>
+            <vitesse>24000</vitesse>
+            <quantite>500</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>5</id>
+            <name>Cable Intergalactique</name>
+            <logo>icones/CableIntergalactique.png</logo>
+            <cout>1244160</cout>
+            <croissance>1.11</croissance>
+            <revenu>622080</revenu>
+            <vitesse>96000</vitesse>
+            <quantite>500</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>6</id>
+            <name>Morty Pad</name>
+            <logo>icones/MortyPad.png</logo>
+            <cout>14929920</cout>
+            <croissance>1.10</croissance>
+            <revenu>7464000</revenu>
+            <vitesse>384000</vitesse>
+            <quantite>500</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>7</id>
+            <name>Portal Gun</name>
+            <logo>icones/PortalGun.png</logo>
+            <cout>179157040</cout>
+            <croissance>1.09</croissance>
+            <revenu>89579000</revenu>
+            <vitesse>1536000</vitesse>
+            <quantite>50</quantite>
+            <timeleft>0</timeleft>
+            <managerUnlocked></managerUnlocked>
+            <palliers>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+                <pallier>
+                    <name></name>
+                    <logo></logo>
+                    <seuil></seuil>
+                    <idcible></idcible>
+                    <ratio></ratio>
+                    <typeratio></typeratio>
+                    <unlocked></unlocked>
+                </pallier>
+            </palliers>
+        </product>
+        <product>
+            <id>8</id>
+            <name>Space Ship</name>
+            <logo>icones/SpaceShip.png</logo>
+            <cout>1204531020</cout>
+            <croissance>1.08</croissance>
+            <revenu>250053420</revenu>
+            <vitesse>268285420</vitesse>
+            <quantite>50</quantite>
+            <timeleft>0</timeleft>
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
