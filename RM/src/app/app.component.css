@@ -292,7 +292,8 @@
 grid-template-columns: 25% 25% 30% 20%; }
 .main {
     display: grid;
-grid-template-columns: 20% 80%; }
+    grid-template-columns: 20% 80%; 
+    background-color: #97ce4c;}
 .product {
     display: grid;
 grid-template-columns: 1fr 1fr; }
@@ -309,4 +310,17 @@ grid-template-columns: 1fr 1fr; }
   overflow: auto; /* barre de scroll si besoin */ background-color: white; /* opaque */
   border: solid;
   top:10; /* a 10% du haut */ left:20%; /* a 20% de la gauche */
-  }
+}
+
+.worldlogo{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: 200px;
+}
+
+.left{
+  text-align: center;
+  background-color: #6c9337;
+}

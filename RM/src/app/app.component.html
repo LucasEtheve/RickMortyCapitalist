@@ -1,7 +1,5 @@
 <div class="header">
-  <div> logo monde
-    <span><img [attr.src]="server+world?.logo" class="round" /> </span>
-    <span id="worldname"> {{world?.name}} </span>
+  <div>
     <span [innerHTML]="world.money | bigvalue"> </span>
     <button (click)="cycle()">{{qtmulti}}</button>
   </div>
@@ -10,7 +8,10 @@
   <div> ID du joueur </div>
 </div>
 <div class="main">
-  <div>
+  <div class="left">
+    <span><img [attr.src]="server+world?.logo" class="worldlogo" /> </span>
+    <br>
+    <span id="worldname"> {{world?.name}} </span>
     <p>liste des boutons de menu</p>
     
   </div>

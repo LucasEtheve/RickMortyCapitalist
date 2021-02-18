@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-progress-bar .mat-progress-bar-buffer {
+    height: 30px;
+    width: 100px;
+    background: #f0e14a;
+    border: 1px solid black ;
+    border-radius: 35%;
+  }
+  
+mat-progress-bar .mat-progress-bar-fill::after{
+    background: #7c3e1d;
+    border-radius: 35%;
+    height: 30px;
+    width: 100px;
+}
+
