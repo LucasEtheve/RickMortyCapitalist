@@ -15,26 +15,29 @@ import { Product } from '../world';
 })
 
 export class ProductComponent implements OnInit {
-  server ="http://localhost:8080/";
+  server = "http://localhost:8080/";
   lastupdate = 0;
-  progressbarvalue :number=0;
+  progressbarvalue: number = 0;
   product: Product = new Product;
-  quantitemax=0;
+  quantitemax = 0;
+  prix_actuel= 0;
+  cout_total_achat=0;
+  
 
-  _qtmulti:string="";
+  _qtmulti: string = "";
   @Input()
-  set qtmulti(value:string){
-    this._qtmulti=value;
+  set qtmulti(value: string) {
+    this._qtmulti = value;
     //console.log(this._qtmulti);
-    if(this._qtmulti  && this.product) this.calcMaxCanBuy();
+    if (this._qtmulti && this.product) this.calcMaxCanBuy();
   }
 
-  _money:number=0;
+  _money: number = 0;
   @Input()
-  set money(value:number){
-    this._money=value;
+  set money(value: number) {
+    this._money = value;
     //console.log(this._money);
-    if(this._money && this.product) this.calcMaxCanBuy();
+    if (this._money && this.product) this.calcMaxCanBuy();
   }
 
   @Input()
@@ -44,35 +47,39 @@ export class ProductComponent implements OnInit {
     //console.log("hello");
   }
 
-  @Output() 
+  @Output()
   notifyProduction: EventEmitter<Product> = new EventEmitter<Product>();
+
+  @Output()
+  notifyPurchase: EventEmitter<number> = new EventEmitter<number>();
+
   
   constructor() { }
-  
+
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
-    this.progressbarvalue=0;
+    this.progressbarvalue = 0;
   }
 
   calcScore() {
-    if(this.product.timeleft!=0){
+    if (this.product.timeleft != 0) {
       this.product.timeleft = this.product.timeleft - (Date.now() - this.lastupdate);
-      if (this.product.timeleft <= 0){
-        this.product.timeleft=0;
-        this.progressbarvalue=0;
+      if (this.product.timeleft <= 0) {
+        this.product.timeleft = 0;
+        this.progressbarvalue = 0;
         this.notifyProduction.emit(this.product);
       }
-      else if (this.product.timeleft>0){
-        this.progressbarvalue=((this.product.vitesse - this.product.timeleft)/this.product.vitesse)*100;
+      else if (this.product.timeleft > 0) {
+        this.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100;
       }
     }
   }
 
-  startFabrication(){
-    this.product.timeleft=this.product.vitesse;
-    this.lastupdate=Date.now();
-  } 
-  calcMaxCanBuy(){
+  startFabrication() {
+    this.product.timeleft = this.product.vitesse;
+    this.lastupdate = Date.now();
+  }
+  calcMaxCanBuy() {
     /* let sommeMax=0;
     let i=0;
     while(sommeMax < this.money){
@@ -80,17 +87,43 @@ export class ProductComponent implements OnInit {
         i=+1;
     }
     console.log(i); */
-    console.log(this._money);
-    let qtemax = (Math.log(1 - ((this._money * (1 - this.product.croissance))/ this.product.cout))/Math.log(this.product.croissance))-1;
-    if (qtemax<0){
+    //console.log(this.prix_actuel);
+    let qtemax = (Math.log(1 - ((this._money * (1 - this.product.croissance)) / this.product.cout)) / Math.log(this.product.croissance)) - 1;
+    if (qtemax < 0) {
       this.quantitemax = 0;
     }
-    else{
+    else {
       this.quantitemax = Math.floor(qtemax);
     }
+    console.log(this.quantitemax);
   }
 
-  achat(){
+  achat() {
     console.log("achat");
+    switch (this._qtmulti) {
+      case "X1":
+        if (this.product.quantite == 0){
+          this.cout_total_achat = this.product.cout;
+        }
+        else{
+          this.cout_total_achat = this.product.cout * this.product.croissance;
+        }
+        this.product.quantite += 1;
+        console.log(this._money);
+        break;
+      case "X10":
+        this.product.quantite += 10;
+        this.cout_total_achat = this.product.cout *(1 - (this.product.croissance **  11) )/(1  - this.product.croissance);
+        break;
+      case "X100":
+        this.product.quantite += 100;
+        this.cout_total_achat = this.product.cout *(1 - (this.product.croissance **  101) )/(1  - this.product.croissance);
+        break;
+      case "XMAX":
+        this.product.quantite += this.quantitemax;
+        this.cout_total_achat = this.product.cout *(1 - (this.product.croissance **  this.quantitemax) )/(1  - this.product.croissance);
+        break;
+    }
+    this.notifyPurchase.emit(this.cout_total_achat);
   }
 }

@@ -1,10 +1,9 @@
 <div class="header">
   <div>
     <span [innerHTML]="world.money | bigvalue"> </span>
-    <button (click)="cycle()">{{qtmulti}}</button>
   </div>
   <div> <span id="worldname"> argent : {{world.money}} </span> </div>
-  <div> multiplicateur </div>
+  <div> multiplicateur : <button (click)="cycle()">{{qtmulti}}</button> </div>
   <div> ID du joueur </div>
 </div>
 <div class="main">
@@ -13,12 +12,12 @@
     <br>
     <span id="worldname"> {{world?.name}} </span>
     <p>liste des boutons de menu</p>
-    
+
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">
-      <app-product [prod]="product" class="product col-md-6"
-        (notifyProduction)="onProductionDone($event)" [qtmulti]="qtmulti" [money]="world.money"></app-product>
+      <app-product [prod]="product" class="product col-md-6" (notifyProduction)="onProductionDone($event)" (notifyPurchase)="onPurchaseDone($event)"
+        [qtmulti]="qtmulti" [money]="world.money"></app-product>
     </div>
   </div>
 </div>
