@@ -12,14 +12,24 @@
   margin-left: auto;
   margin-right: auto;
   position: relative;
+
 }
 .lesecond {
   position: absolute;
   left:-5px;
-  bottom: -50px;
+  bottom: -20px;
  }
  .letroisieme {
   position: absolute;
   left:50px;
   bottom: -20px;
+ }
+ .textedroite {
+  background-color: #6c9337;
+  border: 3px solid #926f44;
+  width:  150px;
+  height: 70px;
+  position: absolute;
+  left:120px;
+  bottom: 10px;
  }

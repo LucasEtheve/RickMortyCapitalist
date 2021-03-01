@@ -293,10 +293,11 @@ grid-template-columns: 25% 25% 30% 20%; }
 .main {
     display: grid;
     grid-template-columns: 20% 80%; 
-    background-color: #97ce4c;}
+}
 .product {
-    display: grid;
-grid-template-columns: 1fr 1fr; }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px 0px 25px 0px; }
 .round {
   width: 100px;
   height: 100px;
@@ -322,5 +323,4 @@ grid-template-columns: 1fr 1fr; }
 
 .left{
   text-align: center;
-  background-color: #6c9337;
 }
