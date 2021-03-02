@@ -4,7 +4,9 @@
   </div>
   <div> <span id="worldname"> argent : {{world.money}} </span> </div>
   <div> multiplicateur : <button (click)="cycle()">{{qtmulti}}</button> </div>
-  <div> ID du joueur </div>
+  <div> ID du joueur:
+    <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()" />
+  </div>
 </div>
 <div class="main">
   <div class="left">
@@ -12,7 +14,8 @@
     <br>
     <span id="worldname"> {{world?.name}} </span>
     <p>liste des boutons de menu</p>
-    <button (click)="showManagers = !showManagers">Managers</button>
+    <button color="primary" [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0"
+      (click)="showManagers = !showManagers">Managers</button>
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RestserviceService } from './restservice.service';
 import { World, Product, Pallier } from './world';
+
 
 @Component({
   selector: 'app-root',
@@ -13,15 +15,33 @@ export class AppComponent {
   server: string="";
   qtmulti:string="X1";
   showManagers=false;
-  
+  badgeManagers=0;
+  username="";
+
+  constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
+    this.server = service.getServer();
+    service.getWorld().then(
+      world => {
+        this.world = world;
+        this.badgeUpgrades();
+        if (localStorage.getItem("username") != null){
+          this.username = localStorage.getItem("username");
+        }else{
+          this.username = "Captain"+Math.floor(Math.random() * 10000);
+        }
+      });
+  }
+
   onProductionDone(product: Product){
     this.world.money+= product.quantite * product.revenu;
     this.world.score+= product.quantite * product.revenu;
+    this.badgeUpgrades();
   }
 
   onPurchaseDone(cout_total_achat: number){
     this.world.money -= cout_total_achat;
     this.world.score -= cout_total_achat;
+    this.badgeUpgrades();
   }
 
   cycle(){
@@ -43,19 +63,24 @@ export class AppComponent {
   }
 
   hireManager(manager:Pallier){
-    if (this.world.money >= manager.seuil){
+    if (this.world.money >= manager.seuil && this.world.products.product[manager.idcible-1].quantite>0){
       this.world.products.product[manager.idcible-1].managerUnlocked = true;
       manager.unlocked = true;
       this.world.money -= manager.seuil;
+      this.popMessage(manager.name+" est engagé");
     }
-    
   }
 
-  constructor(private service: RestserviceService) {
-    this.server = service.getServer(); 
-    service.getWorld().then(
-      world => {
-        this.world = world;
-      });
+  popMessage(message : string) : void { 
+    this.snackBar.open(message,"", { duration : 2000 })
+  }
+
+  badgeUpgrades(){
+    this.badgeManagers=0;
+    for (let manager of this.world.managers.pallier){
+        if (manager.seuil <= this.world.money){
+          this.badgeManagers++;
+        }
+    }
   }
 }

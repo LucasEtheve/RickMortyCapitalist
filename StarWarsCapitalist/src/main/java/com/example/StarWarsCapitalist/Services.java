@@ -28,12 +28,14 @@ public class Services {
 
     World world = new World();
 
-    public World readWorldFromXml() {
+    public World readWorldFromXml(String username) {
         JAXBContext jaxbContext;
         try {
             jaxbContext = JAXBContext.newInstance(World.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            InputStream input = getClass().getClassLoader().getResourceAsStream("StarWars.xml");
+            String test = username+".xml";
+            System.out.println(test);
+            InputStream input = getClass().getClassLoader().getResourceAsStream(test); 
             world = (World) jaxbUnmarshaller.unmarshal(input);
         } catch (Exception ex) {
             System.out.println("Erreur lecture du fichier:" + ex.getMessage());
@@ -42,7 +44,7 @@ public class Services {
         return world;
     }
 
-    public void saveWorldToXml() {
+    public void saveWorldToXml(String username) {
         JAXBContext jaxbContext;
         try {
             jaxbContext = JAXBContext.newInstance(World.class);
@@ -57,7 +59,7 @@ public class Services {
     
     //@GET
     //Path("world")
-    World getWorld() {
-        return readWorldFromXml();
+    World getWorld(String username) {
+        return readWorldFromXml(username);
     }
 }

@@ -325,8 +325,7 @@ grid-template-columns: 25% 25% 30% 20%; }
 
 .left{
   text-align: center;
-<<<<<<< Updated upstream
-=======
+
   background-color: #6c9337;
 }
 
@@ -336,5 +335,5 @@ grid-template-columns: 25% 25% 30% 20%; }
 
 .selectable{
   display:block;
->>>>>>> Stashed changes
+
 }

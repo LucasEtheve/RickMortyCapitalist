@@ -9,7 +9,7 @@ public class StarWarsCapitalistApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StarWarsCapitalistApplication.class, args);
                 Services S=new Services();
-                S.readWorldFromXml();
+                S.readWorldFromXml("StarWars");
         }
 
 }
