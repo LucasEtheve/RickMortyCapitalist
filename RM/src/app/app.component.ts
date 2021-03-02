@@ -24,10 +24,10 @@ export class AppComponent {
       world => {
         this.world = world;
         this.badgeUpgrades();
-        if (localStorage.getItem("username") != null){
-          this.username = localStorage.getItem("username");
-        }else{
+        if (this.username.length === 0){
           this.username = "Captain"+Math.floor(Math.random() * 10000);
+        }else{
+          //this.username = localStorage.getItem("username");
         }
       });
   }
@@ -82,5 +82,9 @@ export class AppComponent {
           this.badgeManagers++;
         }
     }
+  }
+
+  onUsernameChanged(){
+    localStorage.setItem("username", this.username);
   }
 }

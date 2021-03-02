@@ -33,9 +33,7 @@ public class Services {
         try {
             jaxbContext = JAXBContext.newInstance(World.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            String test = username+".xml";
-            System.out.println(test);
-            InputStream input = getClass().getClassLoader().getResourceAsStream(test); 
+            InputStream input = getClass().getClassLoader().getResourceAsStream(username+".xml"); 
             world = (World) jaxbUnmarshaller.unmarshal(input);
         } catch (Exception ex) {
             System.out.println("Erreur lecture du fichier:" + ex.getMessage());
