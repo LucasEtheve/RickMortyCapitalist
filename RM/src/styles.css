@@ -1,23 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'get_schwiftyregular';
+  src: url('font/get_schwifty-webfont.woff2') format('woff2'),
+       url('font/get_schwifty-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
-html, body { height: 100%;
-background-color: rgb(122, 202, 1);
+}
+html { height: 100%;
+background-image: url("http://localhost:8080/icones/Back1.png");
+background-color: black;
 background-size: cover;
 background-repeat: no-repeat; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'get_schwiftyregular'; }
 
+.bouton{
+  background-image: url("http://localhost:8080/icones/bouton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:none;
+  height: 40px;
+  width: 80px;
+  font:20px 'get_schwiftyregular' ;
+  color: #02cee9;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+.boutonM{
+  background-image: url("http://localhost:8080/icones/bouton.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border:none;
+  height: 75px;
+  width: 150px;
+  font: 2em 'get_schwiftyregular';
+  color: #00b0c8;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
 mat-progress-bar .mat-progress-bar-buffer {
-    height: 30px;
-    width: 100px;
     background: #f0e14a;
-    border: 1px solid black ;
-    border-radius: 35%;
+
   }
   
 mat-progress-bar .mat-progress-bar-fill::after{
     background: #7c3e1d;
-    border-radius: 35%;
-    height: 30px;
-    width: 100px;
 }
 

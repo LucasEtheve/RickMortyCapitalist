@@ -7,6 +7,8 @@
   height: 30px;
   width: 100px;
   margin: 5px 5px 5px 5px;
+  border-radius: 50%;
+  border: 1px solid black ;
 }
 .imagebar{
   margin-left: auto;
@@ -21,15 +23,17 @@
  }
  .letroisieme {
   position: absolute;
-  left:50px;
-  bottom: -20px;
+  left:45px;
+  bottom: -30px;
+  font: 1.8em 'get_schwiftyregular';
  }
  .textedroite {
-  background-color: #6c9337;
-  border: 3px solid #926f44;
-  width:  150px;
-  height: 70px;
+  width:  400px;
+  height: 95px;
   position: absolute;
   left:120px;
   bottom: 10px;
+  font: 1.8em 'get_schwiftyregular';
+  color: #760387;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
  }

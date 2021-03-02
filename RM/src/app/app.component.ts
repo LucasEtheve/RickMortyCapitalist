@@ -25,7 +25,7 @@ export class AppComponent {
         this.world = world;
         this.badgeUpgrades();
         if (localStorage.getItem("username") != null){
-          this.username = localStorage.getItem("username");
+         /* this.username = localStorage.getItem("username");*/
         }else{
           this.username = "Captain"+Math.floor(Math.random() * 10000);
         }
