@@ -12,6 +12,7 @@ export class AppComponent {
   world: World = new World();
   server: string="";
   qtmulti:string="X1";
+  showManagers=false;
   
   onProductionDone(product: Product){
     this.world.money+= product.quantite * product.revenu;
@@ -24,6 +25,7 @@ export class AppComponent {
   }
 
   cycle(){
+    console.log(this.showManagers);
     switch(this.qtmulti){
         case "X1":
           this.qtmulti="X10";
@@ -39,6 +41,16 @@ export class AppComponent {
           break;
     }
   }
+
+  hireManager(manager:Pallier){
+    if (this.world.money >= manager.seuil){
+      this.world.products.product[manager.idcible-1].managerUnlocked = true;
+      manager.unlocked = true;
+      this.world.money -= manager.seuil;
+    }
+    
+  }
+
   constructor(private service: RestserviceService) {
     this.server = service.getServer(); 
     service.getWorld().then(
