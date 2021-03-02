@@ -1,9 +1,7 @@
 <div class="header">
-  <div>
-    <span [innerHTML]="world.money | bigvalue"> </span>
-  </div>
-  <div> <span id="worldname"> argent : {{world.money}} </span> </div>
-  <div> multiplicateur : <button (click)="cycle()">{{qtmulti}}</button> </div>
+  <div></div>
+  <div class="money"> <span id="worldname"> Pickle Rick: {{world.money| bigvalue}} <img style="height: 25px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt=""></span> </div>
+  <div> multiplicateur : <button class="bouton" (click)="cycle()">{{qtmulti}}</button> </div>
   <div> ID du joueur:
     <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()" />
   </div>
@@ -12,14 +10,12 @@
   <div class="left">
     <span><img [attr.src]="server+world?.logo" class="worldlogo" /> </span>
     <br>
-    <span id="worldname"> {{world?.name}} </span>
-    <p>liste des boutons de menu</p>
-    <button color="primary" [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0"
+    <button class="boutonM" color="primary" [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0"
       (click)="showManagers = !showManagers">Managers</button>
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">
-      <app-product [prod]="product" class="product col-md-6" (notifyProduction)="onProductionDone($event)"
+      <app-product [prod]="product" class="product produit col-md-6" (notifyProduction)="onProductionDone($event)"
         (notifyPurchase)="onPurchaseDone($event)" [qtmulti]="qtmulti" [money]="world.money"></app-product>
     </div>
   </div>

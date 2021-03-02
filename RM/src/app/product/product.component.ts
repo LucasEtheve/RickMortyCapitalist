@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   quantitemax = 0;
   prix_actuel= 0;
   cout_total_achat=0;
-  
+  true="false";
 
   _qtmulti: string = "";
   @Input()
@@ -72,6 +72,7 @@ export class ProductComponent implements OnInit {
           this.product.timeleft = 0;
         this.progressbarvalue = 0;
         this.notifyProduction.emit(this.product);
+        this.true="false";
       }
       else if (this.product.timeleft > 0) {
         this.progressbarvalue = ((this.product.vitesse - this.product.timeleft) / this.product.vitesse) * 100;
@@ -80,7 +81,8 @@ export class ProductComponent implements OnInit {
   }
 
   startFabrication() {
-    if(this.product.quantite !=0){
+    if(this.product.quantite !=0 && this.true!="true"){
+      this.true="true";
       this.product.timeleft = this.product.vitesse;
       this.lastupdate = Date.now();
     }
