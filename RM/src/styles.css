@@ -14,18 +14,18 @@ background-size: cover;
 background-repeat: no-repeat; }
 body { margin: 0; font-family: 'get_schwiftyregular'; }
 
+/*Les boutons des produits*/
 .bouton{
-  background-image: url("http://localhost:8080/icones/bouton.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  border:none;
+  background: #f0e14a;
+  border:solid #7c3e1d;
   height: 40px;
-  width: 80px;
+  width: 140px;
   font:20px 'get_schwiftyregular' ;
   color: #02cee9;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
+/*Le bouton pour afficher les managers*/
 .boutonM{
   background-image: url("http://localhost:8080/icones/bouton.png");
   background-size: cover;

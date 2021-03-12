@@ -38,7 +38,7 @@
      
     <xs:complexType name="productsType">
         <xs:sequence>
-            <xs:element name="product" type="productType" minOccurs="2" maxOccurs="6"/>
+            <xs:element name="product" type="productType" minOccurs="2" maxOccurs="8"/>
         </xs:sequence>
     </xs:complexType>
     

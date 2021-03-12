@@ -13,12 +13,12 @@
     <div class="textedroite">
         <p>{{product.name}}</p>
         <div [ngSwitch]="_qtmulti">
-            <button  class="bouton" *ngSwitchCase="'X1'" [disabled]="quantitemax < 1" (click)="achat()">x 1</button>
-            <button  class="bouton" *ngSwitchCase="'X10'" [disabled]="quantitemax < 10" (click)="achat()">x 10</button>
-            <button  class="bouton" *ngSwitchCase="'X100'"[disabled]="quantitemax < 100" (click)="achat()">x 100</button>
-            <button  class="bouton" *ngSwitchCase="'XMAX'" [disabled]="quantitemax <= 0" (click)="achat()">x {{quantitemax}}</button>
+            <button  class="bouton" *ngSwitchCase="'X1'" [disabled]="quantitemax < 1" (click)="achat()">Acheter 1</button>
+            <button  class="bouton" *ngSwitchCase="'X10'" [disabled]="quantitemax < 10" (click)="achat()">Acheter 10</button>
+            <button  class="bouton" *ngSwitchCase="'X100'"[disabled]="quantitemax < 100" (click)="achat()">Acheter 100</button>
+            <button  class="bouton" *ngSwitchCase="'XMAX'" [disabled]="quantitemax <= 0" (click)="achat()">Acheter {{quantitemax}}</button>
+        <p>{{product.cout|number:"1.0-0"}}</p>
         </div>
-        <p>{{quantitemax}}</p>
     </div>
 </div>
 

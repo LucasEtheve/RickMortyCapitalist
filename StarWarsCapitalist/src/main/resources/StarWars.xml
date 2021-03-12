@@ -11,7 +11,7 @@ and open the template in the editor.
     xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
     <name>Rick and Morty Capitalist</name>
     <logo>icones/RMWorld.png</logo>
-    <money>150000</money>
+    <money>150000000</money>
     <score></score>
     <totalangels></totalangels>
     <activeangels></activeangels>
@@ -101,7 +101,7 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>2</id>
+            <id>3</id>
             <name>Boite a Larbins</name>
             <logo>icones/BoiteALarbins.png</logo>
             <cout>720</cout>
@@ -142,7 +142,7 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>3</id>
+            <id>4</id>
             <name>Laser Gun</name>
             <logo>icones/LaserGun.png</logo>
             <cout>8640</cout>
@@ -183,9 +183,9 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>4</id>
-            <name>Kalaxian Crystals</name>
-            <logo>icones/KalaxianCrystals.png</logo>
+            <id>5</id>
+            <name>Cable Intergalactique</name>
+            <logo>icones/CableIntergalactique.png</logo>
             <cout>103680</cout>
             <croissance>1.12</croissance>
             <revenu>51840</revenu>
@@ -224,9 +224,9 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>5</id>
-            <name>Cable Intergalactique</name>
-            <logo>icones/CableIntergalactique.png</logo>
+            <id>6</id>
+            <name>Morty Pad</name>
+            <logo>icones/MortyPad.png</logo>
             <cout>1244160</cout>
             <croissance>1.11</croissance>
             <revenu>622080</revenu>
@@ -265,9 +265,9 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>6</id>
-            <name>Morty Pad</name>
-            <logo>icones/MortyPad.png</logo>
+            <id>7</id>
+            <name>Portal Gun</name>
+            <logo>icones/PortalGun.png</logo>
             <cout>14929920</cout>
             <croissance>1.10</croissance>
             <revenu>7464000</revenu>
@@ -306,54 +306,13 @@ and open the template in the editor.
             </palliers>
         </product>
         <product>
-            <id>7</id>
-            <name>Portal Gun</name>
-            <logo>icones/PortalGun.png</logo>
+            <id>8</id>
+            <name>Space Ship</name>
+            <logo>icones/SpaceShip.png</logo>
             <cout>179157040</cout>
             <croissance>1.09</croissance>
             <revenu>89579000</revenu>
             <vitesse>1536000</vitesse>
-            <quantite>0</quantite>
-            <timeleft>0</timeleft>
-            <managerUnlocked></managerUnlocked>
-            <palliers>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-            </palliers>
-        </product>
-        <product>
-            <id>8</id>
-            <name>Space Ship</name>
-            <logo>icones/SpaceShip.png</logo>
-            <cout>1204531020</cout>
-            <croissance>1.08</croissance>
-            <revenu>250053420</revenu>
-            <vitesse>268285420</vitesse>
             <quantite>0</quantite>
             <timeleft>0</timeleft>
             <managerUnlocked></managerUnlocked>
@@ -496,7 +455,7 @@ and open the template in the editor.
     <managers>
         <pallier>
             <name>Beth</name>
-            <logo>icones/blaster.jpg</logo>
+            <logo>icones/Beth.png</logo>
             <seuil>1000</seuil>
             <idcible>1</idcible>
             <ratio></ratio>
@@ -504,10 +463,64 @@ and open the template in the editor.
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Rick</name>
-            <logo>icones/blaster.jpg</logo>
+            <name>Birdperson</name>
+            <logo>icones/MBirdperson.png</logo>
             <seuil>15000</seuil>
             <idcible>2</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Monsieur Larbin</name>
+            <logo>icones/MLarbin.png</logo>
+            <seuil>100000</seuil>
+            <idcible>3</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Summer</name>
+            <logo>icones/Summer.png</logo>
+            <seuil>500000</seuil>
+            <idcible>4</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Mister Poopybutthole</name>
+            <logo>icones/MrPoopybutthole.png</logo>
+            <seuil>1200000</seuil>
+            <idcible>5</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Gwendolyn</name>
+            <logo>icones/Gwendolyn.png</logo>
+            <seuil>10000000</seuil>
+            <idcible>6</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Morty</name>
+            <logo>icones/Morty.png</logo>
+            <seuil>111111111</seuil>
+            <idcible>7</idcible>
+            <ratio></ratio>
+            <typeratio></typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Rick</name>
+            <logo>icones/Rick.png</logo>
+            <seuil>555000000</seuil>
+            <idcible>8</idcible>
             <ratio></ratio>
             <typeratio></typeratio>
             <unlocked>False</unlocked>

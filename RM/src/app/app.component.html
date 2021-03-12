@@ -1,10 +1,10 @@
 <div class="header">
-  <div></div>
-  <div class="money"> <span id="worldname"> Pickle Rick: {{world.money| bigvalue}} <img style="height: 25px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt=""></span> </div>
-  <div> multiplicateur : <button class="bouton" (click)="cycle()">{{qtmulti}}</button> </div>
-  <div> ID du joueur:
+  <div class="idjoueur"> Pseudo:
     <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()" />
   </div>
+  <div class="money"> <span id="worldname"> Pickle Rick: {{world.money| number:"1.0-0"}} <img style="height: 30px;position: relative; bottom:-8px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></span> </div>
+  <div> multiplicateur : <button class="bouton" (click)="cycle()">{{qtmulti}}</button> </div>
+
 </div>
 <div class="main">
   <div class="left">
@@ -21,26 +21,23 @@
   </div>
 </div>
 <div *ngIf="showManagers" class="modal">
-  <div>
-    <h1 class="title">Managers make you feel better !</h1>
-  </div>
-  <div>
+  <div class="titleM"><p>Managers make you feel better !</p></div>
+  <div class="managerstable">
     <div *ngFor="let manager of world.managers.pallier">
       <div *ngIf="!manager.unlocked" class="managerslayout">
         <div>
           <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
-        </div>
-        <div>
           <div class="managername"> {{ manager.name}} </div>
           <div class="managercible"> {{ world.products.product[manager.idcible-1].name}}
-            <div class="managercost"> {{ manager.seuil}} </div>
+            <div class="managercost"> Prix: {{ manager.seuil| number}} <img style="height: 30px; position: relative; bottom:-8px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
           </div>
           <div>
             <div class="hirebutton" (click)="hireManager(manager)"
-              [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire !</div>
+              [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire</div>
           </div>
         </div>
       </div>
     </div>
-    <button class="closebutton" mat-raised- button color="primary" (click)="showManagers = !showManagers">Close</button>
   </div>
+  <button class="closebutton" mat-raised- button color="primary" (click)="showManagers = !showManagers">Close</button>
+</div>

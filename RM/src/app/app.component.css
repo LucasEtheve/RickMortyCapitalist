@@ -289,8 +289,9 @@
   }
 .header {
   padding: 5px;
+  padding-bottom: 15px;
   display: grid;
-  grid-template-columns: 25% 25% 30% 20%; 
+  grid-template-columns: 40% 30% 30%; 
   font:1.8em 'get_schwiftyregular' ;
   color: #02cee9;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;}
@@ -302,7 +303,58 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0px 0px 25px 0px; }
-
+/*Classe Id du joueur*/
+.idjoueur{
+  padding-left: 10px;
+}
+/*Classe Manager Organisation*/
+.managerstable {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px 0px 0px 10px;
+ }
+ /*Classe Manager layout*/
+ .managerslayout{
+   height: 150px;
+ }
+ /*Classe Produit Cible Manager*/
+ .managercible{
+   position: relative;
+   bottom : 100px;
+   left: 130px;
+ }
+  /*Classe Nom Manager*/
+  .managername{
+    position: relative;
+    bottom : 100px;
+    left: 130px;
+  }
+   /*Classe Bouton Manager*/
+ .hirebutton{
+    height: 25px ;
+    width: 75px;
+    font-size: 0.8em;
+    position: relative;
+    bottom : 135px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    left: 12.5px;
+    text-align: center;
+    background: #f0e14a;
+    border: 1px solid #7c3e1d ;
+}
+/*Bouton close Manager*/
+.closebutton{
+  position: relative;
+  left: 45%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font:0.8em 'get_schwiftyregular' ;
+  color: #02cee9;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+  background: #f0e14a;
+  border: 1px solid #7c3e1d ;
+}
 .produit{
   height: 100px;
   width: 450px;
@@ -321,11 +373,20 @@
   position: fixed; /* reste en place */
   z-index: 2; /* au dessus du reste */
   width: 800px; /* largeur */
-  height: 800px; /* hauteur */
+  height: 600px; /* hauteur */
   overflow: auto; /* barre de scroll si besoin */ background-color: white; /* opaque */
-  border: solid;
-  top:10%; /* a 10% du haut */ 
+  border: solid black;
+  top:5%; /* a 10% du haut */ 
   left:20%; /* a 20% de la gauche */
+  font:1.8em 'get_schwiftyregular' ;
+  background-color: #83d2e4;
+  color: #02cee9;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+/*Titre Manager*/
+.titleM{
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 .worldlogo{
