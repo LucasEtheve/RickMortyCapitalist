@@ -7,7 +7,7 @@ import { World, Pallier, Product } from './world';
 })
 export class RestserviceService {
   server = "http://localhost:8080/"
-  user = "StarWars"
+  user = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
   constructor(private http: HttpClient) { }
 
   getUser(): string {
@@ -39,6 +39,18 @@ export class RestserviceService {
   private setHeaders(user: string): HttpHeaders {
     var headers = new HttpHeaders({ 'X-User': user });
     return headers;
+  };
+
+  putManager(manager: Pallier): Promise<Pallier> {
+    return this.http.put(this.server + "adventureisis/generic/manager", manager, {
+      headers: this.setHeaders(this.user)
+    }).toPromise().catch(this.handleError);
+  };
+
+  putProduct(product: Product): Promise<Product> {
+    return this.http.put(this.server + "adventureisis/generic/product", product, {
+      headers: this.setHeaders(this.user)
+    }).toPromise().catch(this.handleError);
   };
 }
 

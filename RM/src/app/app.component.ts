@@ -16,19 +16,16 @@ export class AppComponent {
   qtmulti:string="X1";
   showManagers=false;
   badgeManagers=0;
-  username="";
+  username= "";
 
   constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer();
+    this.username= localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
+    this.service.user = this.username;
     service.getWorld().then(
       world => {
         this.world = world;
         this.badgeUpgrades();
-        if (this.username.length === 0){
-          this.username = "Captain"+Math.floor(Math.random() * 10000);
-        }else{
-          //this.username = localStorage.getItem("username");
-        }
       });
   }
 
@@ -39,8 +36,10 @@ export class AppComponent {
   }
 
   onPurchaseDone(cout_total_achat: number){
+    console.log("avant"+this.world.money)
     this.world.money -= cout_total_achat;
     this.world.score -= cout_total_achat;
+    console.log("après"+this.world.money)
     this.badgeUpgrades();
   }
 
@@ -68,6 +67,7 @@ export class AppComponent {
       manager.unlocked = true;
       this.world.money -= manager.seuil;
       this.popMessage(manager.name+" est engagé");
+      this.service.putManager(manager);
     }
   }
 
@@ -86,5 +86,6 @@ export class AppComponent {
 
   onUsernameChanged(){
     localStorage.setItem("username", this.username);
+    this.service.user = this.username;
   }
 }

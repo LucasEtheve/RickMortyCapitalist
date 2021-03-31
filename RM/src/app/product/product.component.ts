@@ -4,6 +4,7 @@ import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatProgressBar } from '@angular/material/progress-bar';
+import { RestserviceService } from "../restservice.service";
 import { Product } from '../world';
 
 
@@ -23,6 +24,7 @@ export class ProductComponent implements OnInit {
   prix_actuel= 0;
   cout_total_achat=0;
   true="false";
+  progressbar: any;
 
   _qtmulti: string = "";
   @Input()
@@ -44,8 +46,12 @@ export class ProductComponent implements OnInit {
   set prod(value: Product) {
     this.product = value;
     this.prix_actuel = this.product.cout;
-    //console.log(this.prix_actuel);
-    //console.log("hello");
+    if (this.product && this.product.timeleft > 0) {
+      this.lastupdate = Date.now();
+      let progress = (this.product.vitesse - this.product.timeleft) / this.product.vitesse;
+      this.progressbar.set(progress);
+      this.progressbar.animate(1, { duration: this.product.timeleft });
+    }
   }
 
   @Output()
@@ -55,7 +61,7 @@ export class ProductComponent implements OnInit {
   notifyPurchase: EventEmitter<number> = new EventEmitter<number>();
 
   
-  constructor() { }
+  constructor(private service: RestserviceService) { }
 
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
@@ -112,6 +118,7 @@ export class ProductComponent implements OnInit {
       case "X1":
         this.cout_total_achat = this.product.cout;
         this.product.cout = this.product.croissance * this.product.cout;
+        console.log("le cout"+this.product.cout);
         this.product.quantite += 1;
         console.log(this._money);
         break;
@@ -131,7 +138,8 @@ export class ProductComponent implements OnInit {
         this.product.quantite += this.quantitemax;
         break;
     }
-    console.log(this.cout_total_achat);
+    console.log("total: "+this.cout_total_achat);
     this.notifyPurchase.emit(this.cout_total_achat);
+    this.service.putProduct(this.product);
   }
 }
