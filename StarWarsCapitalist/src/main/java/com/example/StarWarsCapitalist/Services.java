@@ -70,7 +70,7 @@ public class Services {
     //Path("world")
     World getWorld(String username) {
         World world = this.readWorldFromXml(username);
-        //this.updateScore(world);
+        this.updateScore(world);
         saveWorldToXml(world, username);
         return readWorldFromXml(username);
     }
@@ -155,26 +155,32 @@ public class Services {
         long tempsEcoule = System.currentTimeMillis() - world.getLastupdate();
         for (ProductType product : world.getProducts().getProduct()) {
             if (!product.isManagerUnlocked()) {
+                System.out.println("time left : "+product.getTimeleft());
                 if (product.getTimeleft() != 0 && tempsEcoule > product.getTimeleft()) {
-                    world.setMoney(world.getScore() + product.getQuantite() * product.getRevenu());
+                    world.setMoney(world.getMoney() + product.getQuantite() * product.getRevenu());
                     world.setScore(world.getScore() + product.getQuantite() * product.getRevenu());
                 } else {
                     long tps = product.getTimeleft() - tempsEcoule;
+                    System.out.println("tps : "+tps);
                     if (tps < 0) {
                         product.setTimeleft(0);
+                        System.out.println("time left1 : "+product.getTimeleft());
                     }
-                    product.setTimeleft(tps);
+                    else{
+                      product.setTimeleft(tps);  
+                    }
                 }
             } else {
-                //on divise  le temps écoulé par le temps de production pour obtnir la quatite fabriqué durant le temps écoulé 
+                //on divise  le temps écoulé par le temps de production pour obtenir la quatite fabriqué durant le temps écoulé 
                 double qtefabriquee = Math.floor(tempsEcoule / product.getVitesse());
                 world.setScore(world.getScore() + product.getQuantite() * product.getRevenu() * qtefabriquee);
                 world.setMoney(world.getMoney() + product.getQuantite() * product.getRevenu() * qtefabriquee);
                 long tps = product.getTimeleft() - tempsEcoule;
                 if (tps < 0) {
                     product.setTimeleft(0);
+                }else{
+                   product.setTimeleft(tps); 
                 }
-                product.setTimeleft(tps);
             }
         }
         world.setLastupdate(System.currentTimeMillis());
