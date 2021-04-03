@@ -17,7 +17,7 @@
             <button  [className]="quantitemax >= 10 ? 'bouton' : 'boutonD'" *ngSwitchCase="'X10'" [disabled]="quantitemax < 10" (click)="achat()">Acheter 10</button>
             <button  [className]="quantitemax >= 100 ? 'bouton' : 'boutonD'" *ngSwitchCase="'X100'" [disabled]="quantitemax < 100" (click)="achat()">Acheter 100</button>
             <button  [className]="quantitemax != 0 ? 'bouton' : 'boutonD'" *ngSwitchCase="'XMAX'" [disabled]="quantitemax <= 0" (click)="achat()">Acheter {{quantitemax}}</button>
-        <p>{{product.cout|number:"1.0-0"}}</p>
+        <p>{{product.cout|number:"1.2-2"}}</p>
         </div>
     </div>
 </div>
