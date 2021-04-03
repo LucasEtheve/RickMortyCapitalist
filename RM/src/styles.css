@@ -24,6 +24,16 @@ body { margin: 0; font-family: 'get_schwiftyregular'; }
   color: #02cee9;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
+/*Les boutons des produits*/
+.boutonD{
+  background: #4d4d4d;
+  border:solid #7c3e1d;
+  height: 40px;
+  width: 140px;
+  font:20px 'get_schwiftyregular' ;
+  color: black;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
 
 /*Le bouton pour afficher les managers*/
 .boutonM{

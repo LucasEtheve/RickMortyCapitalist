@@ -52,5 +52,13 @@ export class RestserviceService {
       headers: this.setHeaders(this.user)
     }).toPromise().catch(this.handleError);
   };
+  
+  putUpgrade(upgrade: Pallier): Promise<any> {
+    return this.http
+      .put(this.server + "adventureisis/generic/upgrade", upgrade, {
+        headers: this.setHeaders(this.user),
+      })
+      .toPromise();
+  }
 }
 

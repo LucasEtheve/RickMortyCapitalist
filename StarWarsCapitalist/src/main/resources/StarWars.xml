@@ -31,17 +31,17 @@ and open the template in the editor.
             <managerUnlocked>False</managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>seuil 50</name>
-                    <logo>icones/blaster.jpg</logo>
-                    <seuil>50</seuil>
+                    <name>Vitesse x2</name>
+                    <logo>icones/Jerry.png</logo>
+                    <seuil>25</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
                     <typeratio>vitesse</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name>seuil 75</name>
-                    <logo>icones/blaster.jpg</logo>
+                    <name>Production x2</name>
+                    <logo>icones/Jerry.png</logo>
                     <seuil>75</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -50,10 +50,10 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>seuil 150</name>
-                    <logo>icones/blaster.jpg</logo>
+                    <logo>icones/Jerry.png</logo>
                     <seuil>150</seuil>
                     <idcible>1</idcible>
-                    <ratio>1</ratio>
+                    <ratio>2</ratio>
                     <typeratio>ange</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
@@ -72,29 +72,29 @@ and open the template in the editor.
             <managerUnlocked>False</managerUnlocked>
             <palliers>
                 <pallier>
-                    <name>seuil 50</name>
-                    <logo>icones/blaster.jpg</logo>
+                    <name>Vitesse x2</name>
+                    <logo>icones/MegaSeed.png</logo>
                     <seuil>50</seuil>
-                    <idcible>1</idcible>
+                    <idcible>2</idcible>
                     <ratio>2</ratio>
                     <typeratio>vitesse</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name>seuil 75</name>
-                    <logo>icones/blaster.jpg</logo>
+                    <name>Production x2</name>
+                    <logo>icones/MegaSeed.png</logo>
                     <seuil>75</seuil>
-                    <idcible>1</idcible>
+                    <idcible>2</idcible>
                     <ratio>2</ratio>
                     <typeratio>gain</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
                     <name>seuil 150</name>
-                    <logo>icones/blaster.jpg</logo>
+                    <logo>icones/MegaSeed.png</logo>
                     <seuil>150</seuil>
-                    <idcible>1</idcible>
-                    <ratio>1</ratio>
+                    <idcible>2</idcible>
+                    <ratio>2</ratio>
                     <typeratio>ange</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
@@ -113,31 +113,22 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/BoiteALarbins.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>3</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/BoiteALarbins.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>3</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -154,31 +145,22 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/LaserGun.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>4</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/LaserGun.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>4</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -195,31 +177,22 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/CableIntergalactique.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>5</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/CableIntergalactique.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>5</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -236,31 +209,22 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/MortyPad.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>6</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/MortyPad.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>6</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -277,31 +241,22 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/PortalGun.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>7</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/PortalGun.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>7</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
@@ -318,63 +273,54 @@ and open the template in the editor.
             <managerUnlocked></managerUnlocked>
             <palliers>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Vitesse x2</name>
+                    <logo>icones/SpaceShip.png</logo>
+                    <seuil>50</seuil>
+                    <idcible>8</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>vitesse</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
                 <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
-                </pallier>
-                <pallier>
-                    <name></name>
-                    <logo></logo>
-                    <seuil></seuil>
-                    <idcible></idcible>
-                    <ratio></ratio>
-                    <typeratio></typeratio>
-                    <unlocked></unlocked>
+                    <name>Production x2</name>
+                    <logo>icones/SpaceShip.png</logo>
+                    <seuil>75</seuil>
+                    <idcible>8</idcible>
+                    <ratio>2</ratio>
+                    <typeratio>gain</typeratio>
+                    <unlocked>False</unlocked>
                 </pallier>
             </palliers>
         </product>
     </products>
     <allunlocks>
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
-        </pallier>
+            <name>Production x2</name>
+            <logo>icones/SpaceShip.png</logo>
+            <seuil>75</seuil>
+            <idcible>8</idcible>
+            <ratio>2</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>                
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
-        </pallier>
+            <name>Production x2</name>
+            <logo>icones/SpaceShip.png</logo>
+            <seuil>75</seuil>
+            <idcible>8</idcible>
+            <ratio>1</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>                
         <pallier>
-            <name></name>
-            <logo></logo>
-            <seuil></seuil>
-            <idcible></idcible>
-            <ratio></ratio>
-            <typeratio></typeratio>
-            <unlocked></unlocked>
-        </pallier>
+            <name>Production x2</name>
+            <logo>icones/SpaceShip.png</logo>
+            <seuil>75</seuil>
+            <idcible>8</idcible>
+            <ratio>1</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>  
     </allunlocks>
     <upgrades>
         <pallier>

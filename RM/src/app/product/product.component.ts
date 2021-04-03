@@ -5,7 +5,7 @@ import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatProgressBar } from '@angular/material/progress-bar';
 import { RestserviceService } from "../restservice.service";
-import { Product } from '../world';
+import { Pallier, Product } from '../world';
 
 
 
@@ -41,7 +41,7 @@ export class ProductComponent implements OnInit {
     //console.log(this._money);
     if (this._money && this.product) this.calcMaxCanBuy();
   }
-
+ 
   @Input()
   set prod(value: Product) {
     this.product = value;
@@ -68,6 +68,20 @@ export class ProductComponent implements OnInit {
     this.progressbarvalue = 0;
   }
 
+  calcUpgrade(unlock: Pallier) {
+    switch (unlock.typeratio) {
+      case "vitesse":
+        if (this.product.timeleft > 0) {
+          this.product.timeleft = this.product.timeleft / 2;
+        }
+        this.product.vitesse = this.product.vitesse / unlock.ratio;
+        break;
+      case "gain":
+        this.product.revenu = this.product.revenu * unlock.ratio;
+        break;
+    }
+  }
+  
   calcScore() {
     if(this.product.managerUnlocked && this.product.timeleft==0){
       this.startFabrication();

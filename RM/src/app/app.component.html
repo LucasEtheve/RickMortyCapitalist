@@ -2,7 +2,9 @@
   <div class="idjoueur"> Pseudo:
     <input type="text" [(ngModel)]="username" (change)="onUsernameChanged()" />
   </div>
-  <div class="money"> <span id="worldname"> Pickle Rick: {{world.money| number:"1.0-0"}} <img style="height: 30px;position: relative; bottom:-8px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></span> </div>
+  <div class="money"> <span id="worldname"> Pickle Rick: {{world.money| number:"1.0-0"}} <img
+        style="height: 30px;position: relative; bottom:-8px" class="picklerick"
+        src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></span> </div>
   <div> multiplicateur : <button class="bouton" (click)="cycle()">{{qtmulti}}</button> </div>
 
 </div>
@@ -12,6 +14,8 @@
     <br>
     <button class="boutonM" color="primary" [matBadge]="badgeManagers" [matBadgeHidden]="badgeManagers==0"
       (click)="showManagers = !showManagers">Managers</button>
+    <br>
+    <button class="boutonM" color="primary" (click)="showUnlocks = !showUnlocks">Unlocks</button>
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">
@@ -21,15 +25,19 @@
   </div>
 </div>
 <div *ngIf="showManagers" class="modal">
-  <div class="titleM"><p>Managers make you feel better !</p></div>
+  <div class="titleM">
+    <p>Managers make you feel better !</p>
+  </div>
   <div class="managerstable">
     <div *ngFor="let manager of world.managers.pallier">
       <div *ngIf="!manager.unlocked" class="managerslayout">
         <div>
-          <div class="logo"><img class="round" [attr.src]="server+manager.logo" /> </div>
+          <div><img class="round" [attr.src]="server+manager.logo" /> </div>
           <div class="managername"> {{ manager.name}} </div>
           <div class="managercible"> {{ world.products.product[manager.idcible-1].name}}
-            <div class="managercost"> Prix: {{ manager.seuil| number}} <img style="height: 30px; position: relative; bottom:-8px"class="picklerick" src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
+            <div class="managercost"> Prix: {{ manager.seuil| number}} <img
+                style="height: 30px; position: relative; bottom:-8px" class="picklerick"
+                src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
           </div>
           <div>
             <div class="hirebutton" (click)="hireManager(manager)"
@@ -40,4 +48,35 @@
     </div>
   </div>
   <button class="closebutton" mat-raised- button color="primary" (click)="showManagers = !showManagers">Close</button>
+</div>
+<div *ngIf="showUnlocks" class="modal">
+  <div class="managerstable">
+    <div *ngFor="let produit of world.products.product">
+      <div *ngFor="let unlock of produit.palliers.pallier">
+        <div *ngIf="!unlock.unlocked" class="managerslayout">
+          <div class="managerslayout">
+            <div><img class="round" [attr.src]="server + unlock.logo" /></div>
+            <div class="nomPrix">
+              <div class="managername">{{ unlock.name }}</div>
+              <div class="managercible">Seuil : {{ unlock.seuil }}
+                <div class="managercost">{{ world.products.product[unlock.idcible - 1].name}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let pallier of world.allunlocks.pallier">
+      <div class="managerslayout">
+        <div><img class="round" [attr.src]="server" /></div>
+        <div class="nomPrix">
+          <div class="managername">{{ pallier.name }}</div>
+          <div class="managercible">Seuil : {{ pallier.seuil }}
+            <div class="managercost">{{ world.products.product[pallier.idcible - 1].name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="closebutton" mat-raised- button color="primary" (click)="showUnlocks= !showUnlocks">Close</button>
 </div>
