@@ -8,6 +8,7 @@ package com.example.StarWarsCapitalist;
 import com.example.StarWarsCapitalist.generated.PallierType;
 import com.example.StarWarsCapitalist.generated.ProductType;
 import com.example.StarWarsCapitalist.generated.World;
+import com.example.StarWarsCapitalist.generated.TyperatioType;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -96,6 +97,20 @@ public class Services {
             product.setCout(newproduct.getCout());
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
+            for (PallierType pallier : product.getPalliers().getPallier()) {
+                if(!pallier.isUnlocked() && product.getQuantite() > pallier.getSeuil()){
+                    pallier.setUnlocked(true);
+                    if(pallier.getTyperatio() == TyperatioType.VITESSE){
+                        if (product.getTimeleft() > 0){
+                            product.setTimeleft(product.getTimeleft() / 2);
+                        }
+                        product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
+                    }
+                    if(pallier.getTyperatio() == TyperatioType.GAIN){
+                        product.setRevenu(product.getRevenu() * pallier.getRatio());
+                    }
+                }
+            }
         } else {
             product.setTimeleft(product.getVitesse());
             // initialiser product.timeleft à product.vitesse 
@@ -155,16 +170,13 @@ public class Services {
         long tempsEcoule = System.currentTimeMillis() - world.getLastupdate();
         for (ProductType product : world.getProducts().getProduct()) {
             if (!product.isManagerUnlocked()) {
-                System.out.println("time left : "+product.getTimeleft());
                 if (product.getTimeleft() != 0 && tempsEcoule > product.getTimeleft()) {
                     world.setMoney(world.getMoney() + product.getQuantite() * product.getRevenu());
                     world.setScore(world.getScore() + product.getQuantite() * product.getRevenu());
                 } else {
                     long tps = product.getTimeleft() - tempsEcoule;
-                    System.out.println("tps : "+tps);
                     if (tps < 0) {
                         product.setTimeleft(0);
-                        System.out.println("time left1 : "+product.getTimeleft());
                     }
                     else{
                       product.setTimeleft(tps);  
