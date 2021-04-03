@@ -52,4 +52,11 @@ public class Webservice {
         String username = request.getHeader("X-user");
         services.updateManager(username, newmanager);
     }
+    
+//    @PUT
+//    @Path("upgrade")
+//    public void putUpgrade(@Context HttpServletRequest request, @RequestBody PallierType newpallier){
+//        String username = request.getHeader("X-user");
+//        services.updateUpgrade(username, newpallier);
+//    }
 }

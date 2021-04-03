@@ -57,8 +57,7 @@ export class RestserviceService {
     return this.http
       .put(this.server + "adventureisis/generic/upgrade", upgrade, {
         headers: this.setHeaders(this.user),
-      })
-      .toPromise();
+      }).toPromise();
   }
 }
 

@@ -15,19 +15,19 @@ export class AppComponent {
   public produits!: QueryList<ProductComponent>;
   title = 'RM';
   world: World = new World();
-  server: string="";
-  qtmulti:string="X1";
-  showUnlocks=false;
-  showManagers=false;
-  badgeManagers=0;
-  badgeCashUpgrades=0;
-  username= "";
-  tousProduits="Tous";//Tous les produits Up
+  server: string = "";
+  qtmulti: string = "X1";
+  showUnlocks = false;
+  showManagers = false;
+  badgeManagers = 0;
+  badgeCashUpgrades = 0;
+  username = "";
+  tousProduits = "Tous";//Tous les produits Up
 
-  
+
   constructor(private service: RestserviceService, private snackBar: MatSnackBar) {
     this.server = service.getServer();
-    this.username= localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
+    this.username = localStorage.getItem("username") || 'Captain' + Math.floor(Math.random() * 10000);
     this.service.user = this.username;
     service.getWorld().then(
       world => {
@@ -35,123 +35,112 @@ export class AppComponent {
       });
   }
 
-  onProductionDone(product: Product){
-    let nbManagers=0;//nb de managers
-    let nbUpgrades=0;//nb d'upgrades
-    this.world.money+= product.quantite * product.revenu;
-    this.world.score+= product.quantite * product.revenu;
-    this.world.managers.pallier.forEach((manager) => {
-      if (this.world.money >= manager.seuil && !manager.unlocked) {
-        nbManagers += 1;
-      }
-    });
-    this.badgeManagers = nbManagers;  
+  onProductionDone(product: Product) {
+    let nbUpgrades = 0;//nb d'upgrades
+    this.world.money += product.quantite * product.revenu;
+    this.world.score += product.quantite * product.revenu;
+    this.badgeUpgradesManager();
   }
 
-  onPurchaseDone(cout_total_achat: number){
-    let nbManagers=0;//nb de managers
-    let nbUpgrades=0;//nb d'upgrades
-    console.log("avant"+this.world.money)
+  onPurchaseDone(cout_total_achat: number) {
+    let nbUpgrades = 0;//nb d'upgrades
+    console.log("avant" + this.world.money)
     this.world.money -= cout_total_achat;
     this.world.score -= cout_total_achat;
-    console.log("après"+this.world.money)
+    console.log("après" + this.world.money)
     //calcul du nombre à afficher dans le badge Manager
-    this.world.managers.pallier.forEach((manager) => {
-      if (this.world.money >= manager.seuil && !manager.unlocked) {
-        nbManagers += 1;
-      }
-    });
-    this.badgeManagers = nbManagers;
+    this.badgeUpgradesManager();
     //calcul du nombre à afficher dans le badge Upgrade
-    this.world.upgrades.pallier.forEach((upgrade) => {
-      if (this.world.money >= upgrade.seuil && !upgrade.unlocked) {
-        nbUpgrades += 1;
+    this.badgeCashUpgrades = 0;
+    for (let upgrade of this.world.upgrades.pallier) {
+      if (!upgrade.unlocked && this.world.money >= upgrade.seuil) {
+        this.badgeCashUpgrades += 1;
       }
-    });
-    this.badgeCashUpgrades = nbUpgrades;
+    }
     //MAJ des unlocks simples pas encore débloquées
-    this.world.products.product.forEach((produit) => {
-      produit.palliers.pallier.forEach((unlock) => {
-        if (produit.quantite >= unlock.seuil && !unlock.unlocked) {
-          this.getUpgrade(unlock);
+    for (let produit of this.world.products.product) {
+      for (let pallier of produit.palliers.pallier) {
+        if (!pallier.unlocked && produit.quantite >= pallier.seuil) {
+          this.getUpgrade(pallier);
         }
-      });
-    });
-    //MAJ des unlocks globales
-    this.world.allunlocks.pallier.forEach((allunlock) => {
-      let qte = 0;
-      this.world.products.product.forEach((product) => {
-        qte += product.quantite;
-      });
-      if (qte >= allunlock.seuil && !allunlock.unlocked) {
-        this.getUpgrade(allunlock);
       }
-    });    
+    }
+
+    //MAJ des unlocks globales
+    for (let pallier of this.world.allunlocks.pallier) {
+      let quantite_totale_produits = 0;
+      for (let produit of this.world.products.product) {
+        quantite_totale_produits += produit.quantite;
+      }
+      if (!pallier.unlocked && quantite_totale_produits >= pallier.seuil) {
+        this.getUpgrade(pallier);
+      }
+    };
   }
 
-  getUpgrade(upgrade: Pallier) {
-    upgrade.unlocked=true;
-    if(upgrade.idcible!=0){
-      this.produits.forEach((produit)=> {
-        if (produit.product.id == upgrade.idcible) {
-          produit.calcUpgrade(upgrade);
+  getUpgrade(pallier: Pallier) {
+    pallier.unlocked = true;
+    if (pallier.idcible != 0) {
+      this.produits.forEach((produit) => {
+        if (produit.product.id == pallier.idcible) {
+          produit.calcUpgrade(pallier);
           this.tousProduits = produit.product.name;
         }
       });
-    } else {
+    }
+    else {
       this.produits.forEach((produit) => {
-        produit.calcUpgrade(upgrade);
+        produit.calcUpgrade(pallier);
       });
     }
-    this.popMessage(
-      "Unlocked " +
-        upgrade.name +
-        ", " +
-        this.tousProduits+
-        " " +
-        upgrade.typeratio +
-        " x" +
-        upgrade.ratio +
-        "!!"
-    );
-
-    this.service.putUpgrade(upgrade);
+    this.popMessage("Unlocked " + pallier.name + ", " + this.tousProduits + " " + pallier.typeratio + " x" + pallier.ratio + "!!");
+    this.service.putUpgrade(pallier);
   }
-  cycle(){
+  cycle() {
     console.log(this.showManagers);
-    switch(this.qtmulti){
-        case "X1":
-          this.qtmulti="X10";
-          break;
-        case "X10":
-          this.qtmulti="X100";
-          break;
-        case "X100":
-          this.qtmulti="XMAX";
-          break;
-        case  "XMAX":
-          this.qtmulti="X1";
-          break;
+    switch (this.qtmulti) {
+      case "X1":
+        this.qtmulti = "X10";
+        break;
+      case "X10":
+        this.qtmulti = "X100";
+        break;
+      case "X100":
+        this.qtmulti = "XMAX";
+        break;
+      case "XMAX":
+        this.qtmulti = "X1";
+        break;
     }
   }
 
-  hireManager(manager:Pallier){
-    if (this.world.money >= manager.seuil && this.world.products.product[manager.idcible-1].quantite>0){
-      this.world.products.product[manager.idcible-1].managerUnlocked = true;
+  hireManager(manager: Pallier) {
+    if (this.world.money >= manager.seuil && this.world.products.product[manager.idcible - 1].quantite > 0) {
+      this.world.products.product[manager.idcible - 1].managerUnlocked = true;
       manager.unlocked = true;
       this.world.money -= manager.seuil;
-      this.popMessage(manager.name+" est engagé");
+      this.popMessage(manager.name + " est engagé");
       this.service.putManager(manager);
     }
   }
-  
 
-  popMessage(message : string) : void { 
-    this.snackBar.open(message,"", { duration : 2000 })
+
+  popMessage(message: string): void {
+    this.snackBar.open(message, "", { duration: 2000 })
   }
 
-  onUsernameChanged(){
+  onUsernameChanged() {
     localStorage.setItem("username", this.username);
     this.service.user = this.username;
+  }
+
+  //calcul du nombre à afficher dans le badge Manager
+  badgeUpgradesManager() {
+    this.badgeManagers = 0;
+    for (let manager of this.world.managers.pallier) {
+      if (manager.seuil <= this.world.money && !manager.unlocked) {
+        this.badgeManagers++;
+      }
+    }
   }
 }
