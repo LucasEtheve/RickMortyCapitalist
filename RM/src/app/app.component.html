@@ -53,10 +53,10 @@
   <div class="managerstable">
     <div *ngFor="let produit of world.products.product">
       <div *ngFor="let unlock of produit.palliers.pallier">
-        <div *ngIf="!unlock.unlocked" class="managerslayout">
+        <div *ngIf="!unlock.unlocked">
           <div class="managerslayout">
             <div><img class="round" [attr.src]="server + unlock.logo" /></div>
-            <div class="nomPrix">
+            <div>
               <div class="managername">{{ unlock.name }}</div>
               <div class="managercible">Seuil : {{ unlock.seuil }}
                 <div class="managercost">{{ world.products.product[unlock.idcible - 1].name}}</div>
@@ -69,7 +69,7 @@
     <div *ngFor="let pallier of world.allunlocks.pallier">
       <div class="managerslayout">
         <div><img class="round" [attr.src]="server" /></div>
-        <div class="nomPrix">
+        <div>
           <div class="managername">{{ pallier.name }}</div>
           <div class="managercible">Seuil : {{ pallier.seuil }}
             <div class="managercost">{{ world.products.product[pallier.idcible - 1].name}}</div>

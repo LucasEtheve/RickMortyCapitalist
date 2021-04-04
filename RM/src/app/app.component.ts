@@ -57,36 +57,17 @@ export class AppComponent {
         this.badgeCashUpgrades += 1;
       }
     }
-    //MAJ des unlocks simples pas encore débloquées
-    for (let produit of this.world.products.product) {
-      for (let pallier of produit.palliers.pallier) {
-        if (!pallier.unlocked && produit.quantite >= pallier.seuil) {
-          this.getUpgrade(pallier);
-        }
-      }
-    }
-
-    //MAJ des unlocks globales
-    for (let pallier of this.world.allunlocks.pallier) {
-      let quantite_totale_produits = 0;
-      for (let produit of this.world.products.product) {
-        quantite_totale_produits += produit.quantite;
-      }
-      if (!pallier.unlocked && quantite_totale_produits >= pallier.seuil) {
-        this.getUpgrade(pallier);
-      }
-    };
+    this.unlock();
+    this.allUnlock();
   }
 
   getUpgrade(pallier: Pallier) {
     pallier.unlocked = true;
-    if (pallier.idcible != 0) {
-      this.produits.forEach((produit) => {
-        if (produit.product.id == pallier.idcible) {
-          produit.calcUpgrade(pallier);
-          this.tousProduits = produit.product.name;
-        }
-      });
+    if (pallier.idcible > 0){
+      for(let produit of this.produits){
+        produit.calcUpgrade(pallier);
+        this.tousProduits = produit.product.name;
+      }
     }
     else {
       this.produits.forEach((produit) => {
@@ -142,5 +123,29 @@ export class AppComponent {
         this.badgeManagers++;
       }
     }
+  }
+
+  unlock(){
+    //MAJ des unlocks simples pas encore débloquées
+    for (let produit of this.world.products.product) {
+      for (let i = 0; i < 2; i++) {
+        if (!produit.palliers.pallier[i].unlocked && produit.quantite >= produit.palliers.pallier[i].seuil) {
+          this.getUpgrade(produit.palliers.pallier[i]);
+        }
+      }
+    }
+  }
+  
+  allUnlock(){
+    //MAJ des unlocks globales
+    for (let pallier of this.world.allunlocks.pallier) {
+      let quantite_totale_produits = 0;
+      for (let produit of this.world.products.product) {
+        quantite_totale_produits += produit.quantite;
+      }
+      if (!pallier.unlocked && quantite_totale_produits >= pallier.seuil) {
+        this.getUpgrade(pallier);
+      }
+    };
   }
 }
