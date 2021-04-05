@@ -16,6 +16,9 @@
       (click)="showManagers = !showManagers">Managers</button>
     <br>
     <button class="boutonM" color="primary" (click)="showUnlocks = !showUnlocks">Unlocks</button>
+    <br>
+    <button class="boutonM" color="primary" [matBadge]="badgeUpgrades" [matBadgeHidden]="badgeUpgrades==0"
+      (click)="showUpgrades = !showUpgrades">Upgrades</button>
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">
@@ -50,6 +53,9 @@
   <button class="closebutton" mat-raised- button color="primary" (click)="showManagers = !showManagers">Close</button>
 </div>
 <div *ngIf="showUnlocks" class="modal">
+  <div class="titleM">
+    <p>Next Unlocks !</p>
+  </div>
   <div class="managerstable">
     <div *ngFor="let produit of world.products.product">
       <div *ngFor="let unlock of produit.palliers.pallier">
@@ -67,16 +73,51 @@
       </div>
     </div>
     <div *ngFor="let pallier of world.allunlocks.pallier">
-      <div class="managerslayout">
-        <div><img class="round" [attr.src]="server" /></div>
-        <div>
-          <div class="managername">{{ pallier.name }}</div>
-          <div class="managercible">Seuil : {{ pallier.seuil }}
-            <div class="managercost">{{ world.products.product[pallier.idcible - 1].name}}</div>
+      <div *ngIf="!pallier.unlocked">
+        <div class="managerslayout">
+          <div><img class="round" [attr.src]="server+pallier.logo" /></div>
+          <div>
+            <div class="managername">{{ pallier.name }}</div>
+            <div class="managercible">Seuil : {{ pallier.seuil }}
+              <div class="managercost">Tous les produits</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <button class="closebutton" mat-raised- button color="primary" (click)="showUnlocks= !showUnlocks">Close</button>
+</div>
+<div *ngIf="showUpgrades" class="modal">
+  <div class="titleM">
+    <p>Purchase Upgrades !</p>
+  </div>
+  <div class="managerstable">
+    <div *ngFor="let pallier of world.upgrades.pallier">
+      <div *ngIf="!pallier.unlocked" class="managerslayout">
+        <div>
+          <div><img class="round" [attr.src]="server+pallier.logo" /> </div>
+          <div class="managername"> {{ pallier.name}} </div>
+          <div *ngIf="pallier.idcible === 0;else elseBlock" class="managercible">Tous les produits
+            <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
+                style="height: 30px; position: relative; bottom:-8px" class="picklerick"
+                src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
+          </div>
+          <ng-template #elseBlock>
+            <div class="managercible">{{ world.products.product[pallier.idcible - 1].name }}
+            <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
+                style="height: 30px; position: relative; bottom:-8px" class="picklerick"
+                src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
+              </div>
+          </ng-template>
+
+        </div>
+        <div>
+          <div class="hirebutton" (click)="purchaseUpgrade(Upgrade)"
+            [ngClass]="{'selectable' : (world.money >= pallier.seuil)}">Purchase</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="closebutton" mat-raised- button color="primary" (click)="showUpgrades = !showUpgrades">Close</button>
 </div>

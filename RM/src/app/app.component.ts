@@ -63,18 +63,21 @@ export class AppComponent {
 
   getUpgrade(pallier: Pallier) {
     pallier.unlocked = true;
-    if (pallier.idcible > 0){
-      for(let produit of this.produits){
-        produit.calcUpgrade(pallier);
-        this.tousProduits = produit.product.name;
-      }
-    }
-    else {
+    if (pallier.idcible == 0){
       this.produits.forEach((produit) => {
         produit.calcUpgrade(pallier);
       });
+      this.popMessage("Unlocked : " + pallier.name + " pour tous les produits");
     }
-    this.popMessage("Unlocked " + pallier.name + ", " + this.tousProduits + " " + pallier.typeratio + " x" + pallier.ratio + "!!");
+    else {
+      for(let produit of this.produits){
+        if(pallier.idcible==produit.product.id){
+        console.log('numa'+produit.product.name);
+        produit.calcUpgrade(pallier);
+        this.tousProduits = produit.product.name;
+        this.popMessage("Unlocked : "  + this.tousProduits +' '+ pallier.name);}
+      }
+    }
     this.service.putUpgrade(pallier);
   }
   cycle() {
@@ -139,11 +142,13 @@ export class AppComponent {
   allUnlock(){
     //MAJ des unlocks globales
     for (let pallier of this.world.allunlocks.pallier) {
-      let quantite_totale_produits = 0;
+      let quantite_totale = 0;
       for (let produit of this.world.products.product) {
-        quantite_totale_produits += produit.quantite;
+        if (produit.quantite >= pallier.seuil){
+          quantite_totale += 1;
+        }
       }
-      if (!pallier.unlocked && quantite_totale_produits >= pallier.seuil) {
+      if (!pallier.unlocked && quantite_totale == 8) {
         this.getUpgrade(pallier);
       }
     };

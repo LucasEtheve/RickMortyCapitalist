@@ -11,7 +11,7 @@ and open the template in the editor.
     xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
     <name>Rick and Morty Capitalist</name>
     <logo>icones/RMWorld.png</logo>
-    <money>150000000</money>
+    <money>150000000000000</money>
     <score></score>
     <totalangels></totalangels>
     <activeangels></activeangels>
@@ -295,10 +295,19 @@ and open the template in the editor.
     </products>
     <allunlocks>
         <pallier>
+            <name>Vitesse x2</name>
+            <logo>icones/SpaceShip.png</logo>
+            <seuil>25</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
+            <typeratio>vitesse</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>                
+        <pallier>
             <name>Production x2</name>
             <logo>icones/SpaceShip.png</logo>
-            <seuil>75</seuil>
-            <idcible>8</idcible>
+            <seuil>50</seuil>
+            <idcible>0</idcible>
             <ratio>2</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
@@ -306,18 +315,9 @@ and open the template in the editor.
         <pallier>
             <name>Production x2</name>
             <logo>icones/SpaceShip.png</logo>
-            <seuil>75</seuil>
-            <idcible>8</idcible>
-            <ratio>1</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>False</unlocked>
-        </pallier>                
-        <pallier>
-            <name>Production x2</name>
-            <logo>icones/SpaceShip.png</logo>
-            <seuil>75</seuil>
-            <idcible>8</idcible>
-            <ratio>1</ratio>
+            <seuil>100</seuil>
+            <idcible>0</idcible>
+            <ratio>2</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
         </pallier>  
@@ -362,7 +362,7 @@ and open the template in the editor.
         <pallier>
             <name>Profits x3</name>
             <logo>icones/blaster.jpg</logo>
-            <seuil>1000000000000</seuil>
+            <seuil>1000000000</seuil>
             <idcible>0</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
