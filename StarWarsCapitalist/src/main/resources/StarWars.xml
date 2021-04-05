@@ -360,10 +360,28 @@ and open the template in the editor.
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
+            <name>Portal gun profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>15000000</seuil>
+            <idcible>1</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
             <name>Profits x3</name>
             <logo>icones/blaster.jpg</logo>
             <seuil>1000000000</seuil>
             <idcible>0</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Portal gun profits x3</name>
+            <logo>icones/blaster.jpg</logo>
+            <seuil>15000000</seuil>
+            <idcible>1</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
@@ -383,7 +401,7 @@ and open the template in the editor.
             <name>Angel sacrifice</name>
             <logo>icones/blaster.jpg</logo>
             <seuil>100000</seuil>
-            <idcible>-1</idcible>
+            <idcible>0</idcible>
             <ratio>2</ratio>
             <typeratio>ange</typeratio>
             <unlocked>False</unlocked>
@@ -392,7 +410,7 @@ and open the template in the editor.
             <name>Angel rebellion</name>
             <logo>icones/blaster.jpg</logo>
             <seuil>100000000000</seuil>
-            <idcible>-1</idcible>
+            <idcible>0</idcible>
             <ratio>2</ratio>
             <typeratio>ange</typeratio>
             <unlocked>False</unlocked>

@@ -20,8 +20,10 @@ export class AppComponent {
   showUnlocks = false;
   showUpgrades = false;
   showManagers = false;
+  showAngels = false;
   badgeManagers = 0;
   badgeUpgrades = 0;
+  badgeAngels = 0;
   username = "";
   tousProduits = "Tous";//Tous les produits Up
 
@@ -41,20 +43,21 @@ export class AppComponent {
   onProductionDone(product: Product) {
     this.world.money += product.quantite * product.revenu;
     this.world.score += product.quantite * product.revenu;
+    this.world.activeangels = 150 * (Math.sqrt(this.world.score / Math.pow(10, 15)));
+    console.log('Numa' + this.world.totalangels); console.log('NumaACTIV ' + this.world.activeangels);
     this.badgeUpgradesManager();
     this.badgeCashUpgrades();
+    this.badgeUpgradesAngels();
   }
 
   onPurchaseDone(cout_total_achat: number) {
-    let nbUpgrades = 0;//nb d'upgrades
-    console.log("avant" + this.world.money)
     this.world.money -= cout_total_achat;
-    this.world.score -= cout_total_achat;
-    console.log("après" + this.world.money)
     //calcul du nombre à afficher dans le badge Manager
     this.badgeUpgradesManager();
     //calcul du nombre à afficher dans le badge Upgrade
     this.badgeCashUpgrades();
+    //calcul du nombre à afficher dans le badge Upgrade
+    this.badgeUpgradesAngels();
     this.unlock();
     this.allUnlock();
   }
@@ -120,7 +123,7 @@ export class AppComponent {
 
   //acheter les upgrades
   purchaseUpgrade(upgrade: Pallier) {
-    if (this.world.money >= upgrade.seuil && this.world.products.product[upgrade.idcible - 1].quantite > 0) {
+    if (this.world.money >= upgrade.seuil && (upgrade.idcible==0 || this.world.products.product[upgrade.idcible - 1].quantite > 0)) {
       upgrade.unlocked = true;
       this.world.money -= upgrade.seuil;
       this.getUpgrade(upgrade);
@@ -158,6 +161,15 @@ export class AppComponent {
     }
   }
 
+  //calcul du nombre à afficher dans le badge angel
+  badgeUpgradesAngels() {
+    this.badgeAngels = 0;
+    for (let upgrade of this.world.angelupgrades.pallier) {
+      if (!upgrade.unlocked && this.world.totalangels >= upgrade.seuil) {
+        this.badgeAngels++;
+      }
+    }
+  }
   unlock() {
     //MAJ des unlocks simples pas encore débloquées
     for (let produit of this.world.products.product) {

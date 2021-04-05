@@ -414,6 +414,22 @@
   height: 200px;
   width: 200px;
 }
+/*Bouton dans Ange Investor pour recommencer*/
+.boutonReset{
+  background: #f0e14a;
+  border:4px solid #7c3e1d;
+  padding: 10px 10px 0px 10px;
+  text-align: center;
+  height: 100px;
+  width: 200px;
+  font:20px 'get_schwiftyregular' ;
+  color: #02cee9;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+.totalangels{
+  margin: auto;
+  padding-bottom: 50px;
+}
 
 .left{
   text-align: center;

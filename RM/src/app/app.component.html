@@ -19,6 +19,9 @@
     <br>
     <button class="boutonM" color="primary" [matBadge]="badgeUpgrades" [matBadgeHidden]="badgeUpgrades==0"
       (click)="showUpgrades = !showUpgrades">Upgrades</button>
+    <br>
+    <button class="boutonM" color="primary" [matBadge]="badgeAngels" [matBadgeHidden]="badgeAngels==0"
+      (click)="showAngels = !showAngels">Investors</button>
   </div>
   <div class="product">
     <div *ngFor="let product of world.products.product">
@@ -44,7 +47,7 @@
           </div>
           <div>
             <div class="hirebutton" (click)="hireManager(manager)"
-              [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Hire</div>
+              [ngClass]="{'selectable' : (world.money >= manager.seuil)}">Engager</div>
           </div>
         </div>
       </div>
@@ -105,12 +108,45 @@
           </div>
           <ng-template #elseBlock>
             <div class="managercible">{{ world.products.product[pallier.idcible - 1].name }}
+              <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
+                  style="height: 30px; position: relative; bottom:-8px" class="picklerick"
+                  src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
+            </div>
+          </ng-template>
+        </div>
+        <div>
+          <div class="hirebutton" (click)="purchaseUpgrade(pallier)"
+            [ngClass]="{'selectable' : (world.money >= pallier.seuil)}">Acheter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="closebutton" mat-raised- button color="primary" (click)="showUpgrades = !showUpgrades">Close</button>
+</div>
+<div *ngIf="showAngels" class="modal">
+  <div class="titleM">
+    <p>Investir dans les Anges !</p>
+  </div>
+  <div class="managerstable">
+    <div class="totalangels">
+      <div> Total Anges : {{world.totalangels}} </div>
+      <div> 2% de bonus par Ange </div>
+    </div>
+    <div class="totalangels">
+      <div>
+        <div class="boutonReset" >{{world.activeangels| number:"1.2-2"}} Anges a recuperer en recommencant</div>
+      </div>
+    </div>
+    <div *ngFor="let pallier of world.angelupgrades.pallier">
+      <div *ngIf="!pallier.unlocked" class="managerslayout">
+        <div>
+          <div><img class="round" [attr.src]="server+pallier.logo" /> </div>
+          <div class="managername"> {{ pallier.name}} </div>
+          <div class="managercible">Tous les produits
             <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
                 style="height: 30px; position: relative; bottom:-8px" class="picklerick"
                 src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
-              </div>
-          </ng-template>
-
+          </div>
         </div>
         <div>
           <div class="hirebutton" (click)="purchaseUpgrade(pallier)"
@@ -119,5 +155,5 @@
       </div>
     </div>
   </div>
-  <button class="closebutton" mat-raised- button color="primary" (click)="showUpgrades = !showUpgrades">Close</button>
+  <button class="closebutton" mat-raised- button color="primary" (click)="showAngels = !showAngels">Close</button>
 </div>
