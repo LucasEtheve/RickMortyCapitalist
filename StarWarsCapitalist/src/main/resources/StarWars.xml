@@ -8,7 +8,7 @@ and open the template in the editor.
 
 <world
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-    xsi:noNamespaceSchemaLocation='file:/Users/lucasetheve/Desktop/ISIS/4eme/ISIS_capitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
+    xsi:noNamespaceSchemaLocation='file:/D:/ISIS/4A/RickEtMortyCapitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
     <name>Rick and Morty Capitalist</name>
     <logo>icones/RMWorld.png</logo>
     <money>150000000000000</money>
@@ -324,8 +324,8 @@ and open the template in the editor.
     </allunlocks>
     <upgrades>
         <pallier>
-            <name>Jerry profits x3</name>
-            <logo>icones/blaster.jpg</logo>
+            <name>Revenus x3</name>
+            <logo>icones/JerryProdx3.png</logo>
             <seuil>250000</seuil>
             <idcible>1</idcible>
             <ratio>3</ratio>
@@ -333,55 +333,73 @@ and open the template in the editor.
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Portal gun profits x3</name>
-            <logo>icones/blaster.jpg</logo>
-            <seuil>450000</seuil>
-            <idcible>1</idcible>
+            <name>Revenus x3</name>
+            <logo>icones/MegaSeedProdx3.png</logo>
+            <seuil>500000</seuil>
+            <idcible>2</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Jerry profits x3</name>
-            <logo>icones/blaster.jpg</logo>
+            <name>Revenus x3</name>
+            <logo>icones/BoiteALarbinsProdx3.png</logo>
+            <seuil>1000000</seuil>
+            <idcible>3</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Revenus x3</name>
+            <logo>icones/PortalGunProdx3.png</logo>
+            <seuil>5000000</seuil>
+            <idcible>4</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Revenus x3</name>
+            <logo>icones/CableIntergalactiqueProdx3.png</logo>
             <seuil>10000000</seuil>
-            <idcible>1</idcible>
+            <idcible>5</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Portal gun profits x3</name>
-            <logo>icones/blaster.jpg</logo>
-            <seuil>15000000</seuil>
-            <idcible>1</idcible>
+            <name>Revenus x3</name>
+            <logo>icones/MortyPadProdx3.png</logo>
+            <seuil>25000000</seuil>
+            <idcible>6</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Portal gun profits x3</name>
-            <logo>icones/blaster.jpg</logo>
-            <seuil>15000000</seuil>
-            <idcible>1</idcible>
+            <name>Revenus x3</name>
+            <logo>icones/PortalGunProdx3.png</logo>
+            <seuil>500000000</seuil>
+            <idcible>7</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>
         </pallier>
         <pallier>
-            <name>Profits x3</name>
-            <logo>icones/blaster.jpg</logo>
-            <seuil>1000000000</seuil>
+            <name>Revenus x3</name>
+            <logo>icones/SpaceShipProdx3.png</logo>
+            <seuil>10000000000</seuil>
+            <idcible>8</idcible>
+            <ratio>3</ratio>
+            <typeratio>gain</typeratio>
+            <unlocked>False</unlocked>
+        </pallier>
+        <pallier>
+            <name>Revenus x3</name>
+            <logo>icones/Prodx3.png</logo>
+            <seuil>50000000000</seuil>
             <idcible>0</idcible>
-            <ratio>3</ratio>
-            <typeratio>gain</typeratio>
-            <unlocked>False</unlocked>
-        </pallier>
-        <pallier>
-            <name>Portal gun profits x3</name>
-            <logo>icones/blaster.jpg</logo>
-            <seuil>15000000</seuil>
-            <idcible>1</idcible>
             <ratio>3</ratio>
             <typeratio>gain</typeratio>
             <unlocked>False</unlocked>

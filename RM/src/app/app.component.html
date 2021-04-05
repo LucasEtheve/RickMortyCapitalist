@@ -6,8 +6,12 @@
         style="height: 30px;position: relative; bottom:-8px" class="picklerick"
         src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></span> </div>
   <div> multiplicateur : <button class="bouton" (click)="cycle()">{{qtmulti}}</button> </div>
-
 </div>
+<audio controls="control" loop="loop" autoplay="autoplay" style="display:none;">
+  <source src="http://localhost:8080/icones/RMCapitalist.mp4">
+  <source src="http://localhost:8080/icones/RMCapitalist.ogg">
+  <source src="http://localhost:8080/icones/RMCapitalist.wav">    
+</audio>
 <div class="main">
   <div class="left">
     <span><img [attr.src]="server+world?.logo" class="worldlogo" /> </span>
@@ -91,7 +95,7 @@
   </div>
   <button class="closebutton" mat-raised- button color="primary" (click)="showUnlocks= !showUnlocks">Close</button>
 </div>
-<div *ngIf="showUpgrades" class="modal">
+<div *ngIf="showUpgrades" class="modalUpgrades">
   <div class="titleM">
     <p>Purchase Upgrades !</p>
   </div>
@@ -99,7 +103,7 @@
     <div *ngFor="let pallier of world.upgrades.pallier">
       <div *ngIf="!pallier.unlocked" class="managerslayout">
         <div>
-          <div><img class="round" [attr.src]="server+pallier.logo" /> </div>
+          <div><img class="roundUnlock" [attr.src]="server+pallier.logo" /> </div>
           <div class="managername"> {{ pallier.name}} </div>
           <div *ngIf="pallier.idcible === 0;else elseBlock" class="managercible">Tous les produits
             <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
@@ -108,9 +112,9 @@
           </div>
           <ng-template #elseBlock>
             <div class="managercible">{{ world.products.product[pallier.idcible - 1].name }}
-              <div class="managercost"> Prix: {{ pallier.seuil| number}} <img
+              <div class="managercost"><span> Prix: {{ pallier.seuil| number:"1.0-0"}} <img
                   style="height: 30px; position: relative; bottom:-8px" class="picklerick"
-                  src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></div>
+                  src="http://localhost:8080/icones/picklerick.png" alt="Pickle Rick"></span></div>
             </div>
           </ng-template>
         </div>

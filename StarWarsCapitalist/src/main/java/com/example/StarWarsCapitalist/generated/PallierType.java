@@ -56,7 +56,7 @@ public class PallierType {
     protected String name;
     @XmlElement(required = true)
     protected String logo;
-    protected int seuil;
+    protected double seuil;
     protected int idcible;
     protected double ratio;
     @XmlElement(required = true)

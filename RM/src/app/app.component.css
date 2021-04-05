@@ -401,6 +401,20 @@
   color: #a002e9;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
+.modalUpgrades{
+  position: fixed; /* reste en place */
+  z-index: 2; /* au dessus du reste */
+  width: 850px; /* largeur */
+  height: 800px; /* hauteur */
+  overflow: auto; /* barre de scroll si besoin */ background-color: white; /* opaque */
+  border: solid black;
+  top:5%; /* a 10% du haut */ 
+  left:20%; /* a 20% de la gauche */
+  font:1.8em 'get_schwiftyregular' ;
+  background-color: #83e483;
+  color: #00b300;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
 /*Titre Manager*/
 .titleM{
   text-align: center;

@@ -41,6 +41,7 @@ body { margin: 0; font-family: 'get_schwiftyregular'; }
   background-size: cover;
   background-repeat: no-repeat;
   border:none;
+  margin-bottom: 5px;
   height: 75px;
   width: 150px;
   font: 2em 'get_schwiftyregular';
