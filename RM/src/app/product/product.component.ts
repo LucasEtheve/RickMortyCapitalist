@@ -22,6 +22,7 @@ export class ProductComponent implements OnInit {
   product: Product = new Product;
   quantitemax = 0;
   prix_actuel= 0;
+  prix=0;
   cout_total_achat=0;
   true="false";
   progressbar: any;
@@ -66,6 +67,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => { this.calcScore(); }, 100);
     this.progressbarvalue = 0;
+    this.calcPrix("X1");
   }
 
   calcUpgrade(unlock: Pallier) {
@@ -79,6 +81,21 @@ export class ProductComponent implements OnInit {
       case "gain":
         this.product.revenu = this.product.revenu * unlock.ratio;
         break;
+    }
+  }
+
+  calcPrix(qtmulti: string){
+    if (qtmulti=="X1"){
+      this.prix=this.product.cout;
+    }
+    else if (qtmulti=="X10"){
+      this.prix=this.product.cout *((1 - (this.product.croissance ** 10))/(1  - this.product.croissance));
+    }
+    else if (qtmulti=="X100"){
+      this.prix=this.product.cout *((1 - (Math.pow(this.product.croissance,100)) )/(1  - this.product.croissance));
+    }
+    else {
+      this.prix=this.product.cout *((1 - Math.pow(this.product.croissance,this.quantitemax))/(1  - this.product.croissance));
     }
   }
   
@@ -134,22 +151,26 @@ export class ProductComponent implements OnInit {
         this.product.cout = this.product.croissance * this.product.cout;
         console.log("le cout"+this.product.cout);
         this.product.quantite += 1;
+        this.calcPrix(this._qtmulti);
         console.log(this._money);
         break;
       case "X10":
         this.cout_total_achat = this.product.cout *((1 - (this.product.croissance ** 10))/(1  - this.product.croissance));
         this.product.cout = (this.product.croissance ** 10) * this.product.cout;
         this.product.quantite += 10;
+        this.calcPrix(this._qtmulti);
         break;
       case "X100":
         this.cout_total_achat = this.product.cout *((1 - (Math.pow(this.product.croissance,100)) )/(1  - this.product.croissance));
         this.product.cout = (this.product.croissance ** 100) * this.product.cout;
         this.product.quantite += 100;
+        this.calcPrix(this._qtmulti);
         break;
       case "XMAX":
         this.cout_total_achat = this.product.cout *((1 - Math.pow(this.product.croissance,this.quantitemax))/(1  - this.product.croissance));
         this.product.cout = (this.product.croissance ** this.quantitemax) * this.product.cout;
         this.product.quantite += this.quantitemax;
+        this.calcPrix(this._qtmulti);
         break;
     }
     console.log("total: "+this.cout_total_achat);

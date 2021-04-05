@@ -56,7 +56,7 @@ public class PallierType {
     protected String name;
     @XmlElement(required = true)
     protected String logo;
-    protected int seuil;
+    protected double seuil;
     protected int idcible;
     protected double ratio;
     @XmlElement(required = true)
@@ -116,7 +116,7 @@ public class PallierType {
      * Obtient la valeur de la propriété seuil.
      * 
      */
-    public int getSeuil() {
+    public double getSeuil() {
         return seuil;
     }
 
