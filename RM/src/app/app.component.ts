@@ -33,6 +33,8 @@ export class AppComponent {
     service.getWorld().then(
       world => {
         this.world = world;
+        this.badgeUpgradesManager();
+        this.badgeCashUpgrades();
       });
   }
 
@@ -81,15 +83,27 @@ export class AppComponent {
     switch (this.qtmulti) {
       case "X1":
         this.qtmulti = "X10";
+        for (let produit of this.produits) {
+          produit.calcPrix(this.qtmulti);
+        }
         break;
       case "X10":
         this.qtmulti = "X100";
+        for (let produit of this.produits) {
+          produit.calcPrix(this.qtmulti);
+        }
         break;
       case "X100":
         this.qtmulti = "XMAX";
+        for (let produit of this.produits) {
+          produit.calcPrix(this.qtmulti);
+        }
         break;
       case "XMAX":
         this.qtmulti = "X1";
+        for (let produit of this.produits) {
+          produit.calcPrix(this.qtmulti);
+        }
         break;
     }
   }
@@ -104,6 +118,7 @@ export class AppComponent {
     }
   }
 
+  //acheter les upgrades
   purchaseUpgrade(upgrade: Pallier) {
     if (this.world.money >= upgrade.seuil && this.world.products.product[upgrade.idcible - 1].quantite > 0) {
       upgrade.unlocked = true;
