@@ -368,6 +368,10 @@
   height: 100px;
   border-radius: 50%
 }
+.roundUnlock{
+  width: 100px;
+  height: 100px; 
+}
 
 .modal {
   position: fixed; /* reste en place */
@@ -381,6 +385,20 @@
   font:1.8em 'get_schwiftyregular' ;
   background-color: #83d2e4;
   color: #02cee9;
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+.modalUnlock {
+  position: fixed; /* reste en place */
+  z-index: 2; /* au dessus du reste */
+  width: 850px; /* largeur */
+  height: 800px; /* hauteur */
+  overflow: auto; /* barre de scroll si besoin */ background-color: white; /* opaque */
+  border: solid black;
+  top:5%; /* a 10% du haut */ 
+  left:20%; /* a 20% de la gauche */
+  font:1.8em 'get_schwiftyregular' ;
+  background-color: #c583e4;
+  color: #a002e9;
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 /*Titre Manager*/

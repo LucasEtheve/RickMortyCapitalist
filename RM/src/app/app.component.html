@@ -52,7 +52,7 @@
   </div>
   <button class="closebutton" mat-raised- button color="primary" (click)="showManagers = !showManagers">Close</button>
 </div>
-<div *ngIf="showUnlocks" class="modal">
+<div *ngIf="showUnlocks" class="modalUnlock">
   <div class="titleM">
     <p>Next Unlocks !</p>
   </div>
@@ -61,7 +61,7 @@
       <div *ngFor="let unlock of produit.palliers.pallier">
         <div *ngIf="!unlock.unlocked">
           <div class="managerslayout">
-            <div><img class="round" [attr.src]="server + unlock.logo" /></div>
+            <div><img class="roundUnlock" [attr.src]="server + unlock.logo" /></div>
             <div>
               <div class="managername">{{ unlock.name }}</div>
               <div class="managercible">Seuil : {{ unlock.seuil }}
@@ -113,7 +113,7 @@
 
         </div>
         <div>
-          <div class="hirebutton" (click)="purchaseUpgrade(Upgrade)"
+          <div class="hirebutton" (click)="purchaseUpgrade(pallier)"
             [ngClass]="{'selectable' : (world.money >= pallier.seuil)}">Purchase</div>
         </div>
       </div>

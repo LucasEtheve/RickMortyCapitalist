@@ -32,7 +32,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/Jerry.png</logo>
+                    <logo>icones/JerrySpeedx2.png</logo>
                     <seuil>25</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -41,7 +41,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/Jerry.png</logo>
+                    <logo>icones/JerryProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>1</idcible>
                     <ratio>2</ratio>
@@ -73,7 +73,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/MegaSeed.png</logo>
+                    <logo>icones/MegaSeedSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
@@ -82,7 +82,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/MegaSeed.png</logo>
+                    <logo>icones/MegaSeedProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>2</idcible>
                     <ratio>2</ratio>
@@ -114,7 +114,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/BoiteALarbins.png</logo>
+                    <logo>icones/BoiteALarbinsSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>3</idcible>
                     <ratio>2</ratio>
@@ -123,7 +123,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/BoiteALarbins.png</logo>
+                    <logo>icones/BoiteALarbinsProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>3</idcible>
                     <ratio>2</ratio>
@@ -146,7 +146,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/LaserGun.png</logo>
+                    <logo>icones/LaserGunSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>4</idcible>
                     <ratio>2</ratio>
@@ -155,7 +155,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/LaserGun.png</logo>
+                    <logo>icones/LaserGunProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>4</idcible>
                     <ratio>2</ratio>
@@ -178,7 +178,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/CableIntergalactique.png</logo>
+                    <logo>icones/CableIntergalactiqueSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>5</idcible>
                     <ratio>2</ratio>
@@ -187,7 +187,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/CableIntergalactique.png</logo>
+                    <logo>icones/CableIntergalactiqueProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>5</idcible>
                     <ratio>2</ratio>
@@ -210,7 +210,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/MortyPad.png</logo>
+                    <logo>icones/MortyPadSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>6</idcible>
                     <ratio>2</ratio>
@@ -219,7 +219,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/MortyPad.png</logo>
+                    <logo>icones/MortyPadProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>6</idcible>
                     <ratio>2</ratio>
@@ -242,7 +242,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/PortalGun.png</logo>
+                    <logo>icones/PortalGunSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>7</idcible>
                     <ratio>2</ratio>
@@ -251,7 +251,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/PortalGun.png</logo>
+                    <logo>icones/PortalGunProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>7</idcible>
                     <ratio>2</ratio>
@@ -274,7 +274,7 @@ and open the template in the editor.
             <palliers>
                 <pallier>
                     <name>Vitesse x2</name>
-                    <logo>icones/SpaceShip.png</logo>
+                    <logo>icones/SpaceShipSpeedx2.png</logo>
                     <seuil>50</seuil>
                     <idcible>8</idcible>
                     <ratio>2</ratio>
@@ -283,7 +283,7 @@ and open the template in the editor.
                 </pallier>
                 <pallier>
                     <name>Production x2</name>
-                    <logo>icones/SpaceShip.png</logo>
+                    <logo>icones/SpaceShipProdx2.png</logo>
                     <seuil>75</seuil>
                     <idcible>8</idcible>
                     <ratio>2</ratio>
@@ -296,7 +296,7 @@ and open the template in the editor.
     <allunlocks>
         <pallier>
             <name>Vitesse x2</name>
-            <logo>icones/SpaceShip.png</logo>
+            <logo>icones/Speedx2.png</logo>
             <seuil>25</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -305,7 +305,7 @@ and open the template in the editor.
         </pallier>                
         <pallier>
             <name>Production x2</name>
-            <logo>icones/SpaceShip.png</logo>
+            <logo>icones/Prodx2.png</logo>
             <seuil>50</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>
@@ -314,7 +314,7 @@ and open the template in the editor.
         </pallier>                
         <pallier>
             <name>Production x2</name>
-            <logo>icones/SpaceShip.png</logo>
+            <logo>icones/Prodx2.png</logo>
             <seuil>100</seuil>
             <idcible>0</idcible>
             <ratio>2</ratio>

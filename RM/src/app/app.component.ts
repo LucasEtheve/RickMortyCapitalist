@@ -18,9 +18,10 @@ export class AppComponent {
   server: string = "";
   qtmulti: string = "X1";
   showUnlocks = false;
+  showUpgrades = false;
   showManagers = false;
   badgeManagers = 0;
-  badgeCashUpgrades = 0;
+  badgeUpgrades = 0;
   username = "";
   tousProduits = "Tous";//Tous les produits Up
 
@@ -36,10 +37,10 @@ export class AppComponent {
   }
 
   onProductionDone(product: Product) {
-    let nbUpgrades = 0;//nb d'upgrades
     this.world.money += product.quantite * product.revenu;
     this.world.score += product.quantite * product.revenu;
     this.badgeUpgradesManager();
+    this.badgeCashUpgrades();
   }
 
   onPurchaseDone(cout_total_achat: number) {
@@ -51,31 +52,26 @@ export class AppComponent {
     //calcul du nombre à afficher dans le badge Manager
     this.badgeUpgradesManager();
     //calcul du nombre à afficher dans le badge Upgrade
-    this.badgeCashUpgrades = 0;
-    for (let upgrade of this.world.upgrades.pallier) {
-      if (!upgrade.unlocked && this.world.money >= upgrade.seuil) {
-        this.badgeCashUpgrades += 1;
-      }
-    }
+    this.badgeCashUpgrades();
     this.unlock();
     this.allUnlock();
   }
 
   getUpgrade(pallier: Pallier) {
     pallier.unlocked = true;
-    if (pallier.idcible == 0){
+    if (pallier.idcible == 0) {
       this.produits.forEach((produit) => {
         produit.calcUpgrade(pallier);
       });
       this.popMessage("Unlocked : " + pallier.name + " pour tous les produits");
     }
     else {
-      for(let produit of this.produits){
-        if(pallier.idcible==produit.product.id){
-        console.log('numa'+produit.product.name);
-        produit.calcUpgrade(pallier);
-        this.tousProduits = produit.product.name;
-        this.popMessage("Unlocked : "  + this.tousProduits +' '+ pallier.name);}
+      for (let produit of this.produits) {
+        if (pallier.idcible == produit.product.id) {
+          produit.calcUpgrade(pallier);
+          this.tousProduits = produit.product.name;
+          this.popMessage("Unlocked : " + this.tousProduits + ' ' + pallier.name);
+        }
       }
     }
     this.service.putUpgrade(pallier);
@@ -108,6 +104,16 @@ export class AppComponent {
     }
   }
 
+  purchaseUpgrade(upgrade: Pallier) {
+    if (this.world.money >= upgrade.seuil && this.world.products.product[upgrade.idcible - 1].quantite > 0) {
+      upgrade.unlocked = true;
+      this.world.money -= upgrade.seuil;
+      this.getUpgrade(upgrade);
+      this.popMessage(upgrade.name + " est débloquée");
+      this.service.putUpgrade(upgrade);
+    }
+  }
+
 
   popMessage(message: string): void {
     this.snackBar.open(message, "", { duration: 2000 })
@@ -127,8 +133,17 @@ export class AppComponent {
       }
     }
   }
+  //calcul du nombre à afficher dans le badge upgrade
+  badgeCashUpgrades() {
+    this.badgeUpgrades = 0;
+    for (let upgrade of this.world.upgrades.pallier) {
+      if (!upgrade.unlocked && this.world.money >= upgrade.seuil) {
+        this.badgeUpgrades++;
+      }
+    }
+  }
 
-  unlock(){
+  unlock() {
     //MAJ des unlocks simples pas encore débloquées
     for (let produit of this.world.products.product) {
       for (let i = 0; i < 2; i++) {
@@ -138,13 +153,13 @@ export class AppComponent {
       }
     }
   }
-  
-  allUnlock(){
+
+  allUnlock() {
     //MAJ des unlocks globales
     for (let pallier of this.world.allunlocks.pallier) {
       let quantite_totale = 0;
       for (let produit of this.world.products.product) {
-        if (produit.quantite >= pallier.seuil){
+        if (produit.quantite >= pallier.seuil) {
           quantite_totale += 1;
         }
       }
