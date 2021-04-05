@@ -98,15 +98,15 @@ public class Services {
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
             for (PallierType pallier : product.getPalliers().getPallier()) {
-                if(!pallier.isUnlocked() && product.getQuantite() > pallier.getSeuil()){
+                if (!pallier.isUnlocked() && product.getQuantite() > pallier.getSeuil()) {
                     pallier.setUnlocked(true);
-                    if(pallier.getTyperatio() == TyperatioType.VITESSE){
-                        if (product.getTimeleft() > 0){
+                    if (pallier.getTyperatio() == TyperatioType.VITESSE) {
+                        if (product.getTimeleft() > 0) {
                             product.setTimeleft(product.getTimeleft() / 2);
                         }
                         product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
                     }
-                    if(pallier.getTyperatio() == TyperatioType.GAIN){
+                    if (pallier.getTyperatio() == TyperatioType.GAIN) {
                         product.setRevenu(product.getRevenu() * pallier.getRatio());
                     }
                 }
@@ -148,6 +148,44 @@ public class Services {
         return true;
     }
 
+    public Boolean updateUpgrade(String username, PallierType newpallier) {
+        // aller chercher le monde qui correspond au joueur
+        World world = getWorld(username);
+        // trouver dans ce monde, le pallier équivalent à celui passé en paramètre
+        PallierType pallier = findUpgradeByName(world, newpallier.getName());
+        if (pallier == null) {
+            return false;
+        }
+        pallier.setUnlocked(true);
+        if (pallier.getIdcible() > 0) {
+            ProductType product = findProductById(world, pallier.getIdcible());
+            if (pallier.getTyperatio() == TyperatioType.VITESSE) {
+                if (product.getTimeleft() > 0) {
+                    product.setTimeleft(product.getTimeleft() / 2);
+                }
+                product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
+            }
+            if (pallier.getTyperatio() == TyperatioType.GAIN) {
+                product.setRevenu(product.getRevenu() * pallier.getRatio());
+            }
+        } //upgarde pour tous les produits (allunlock)
+        else {
+            for (ProductType product : world.getProducts().getProduct()) {
+                if (pallier.getTyperatio() == TyperatioType.VITESSE) {
+                    if (product.getTimeleft() > 0) {
+                        product.setTimeleft(product.getTimeleft() / 2);
+                    }
+                    product.setVitesse((int) (product.getVitesse() / pallier.getRatio()));
+                }
+                if (pallier.getTyperatio() == TyperatioType.GAIN) {
+                    product.setRevenu(product.getRevenu() * pallier.getRatio());
+                }
+            }
+        }
+        saveWorldToXml(world, username);
+        return true;
+    }
+
     private ProductType findProductById(World world, int id) {
         for (ProductType product : world.getProducts().getProduct()) {
             if (product.getId() == id) {
@@ -166,6 +204,15 @@ public class Services {
         return null;
     }
 
+    private PallierType findUpgradeByName(World world, String name) {
+        for (PallierType pallier : world.getUpgrades().getPallier()) {
+            if (pallier.getName().equals(name)) {
+                return pallier;
+            }
+        }
+        return null;
+    }
+
     private void updateScore(World world) {
         long tempsEcoule = System.currentTimeMillis() - world.getLastupdate();
         for (ProductType product : world.getProducts().getProduct()) {
@@ -177,9 +224,8 @@ public class Services {
                     long tps = product.getTimeleft() - tempsEcoule;
                     if (tps < 0) {
                         product.setTimeleft(0);
-                    }
-                    else{
-                      product.setTimeleft(tps);  
+                    } else {
+                        product.setTimeleft(tps);
                     }
                 }
             } else {
@@ -190,8 +236,8 @@ public class Services {
                 long tps = product.getTimeleft() - tempsEcoule;
                 if (tps < 0) {
                     product.setTimeleft(0);
-                }else{
-                   product.setTimeleft(tps); 
+                } else {
+                    product.setTimeleft(tps);
                 }
             }
         }
