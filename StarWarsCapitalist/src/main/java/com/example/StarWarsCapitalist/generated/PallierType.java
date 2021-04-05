@@ -116,7 +116,7 @@ public class PallierType {
      * Obtient la valeur de la propriété seuil.
      * 
      */
-    public int getSeuil() {
+    public double getSeuil() {
         return seuil;
     }
 

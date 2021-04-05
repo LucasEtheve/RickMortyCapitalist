@@ -132,7 +132,6 @@ export class AppComponent {
     }
   }
 
-
   popMessage(message: string): void {
     this.snackBar.open(message, "", { duration: 2000 })
   }
