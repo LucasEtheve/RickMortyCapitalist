@@ -60,6 +60,9 @@ export class AppComponent {
     this.badgeUpgradesAngels();
     this.unlock();
     this.allUnlock();
+    this.produits.forEach((produit) => {
+      produit.calcPrix(produit._qtmulti);
+    });
   }
 
   getUpgrade(pallier: Pallier) {
@@ -69,6 +72,7 @@ export class AppComponent {
         produit.calcUpgrade(pallier);
       });
       this.popMessage("Unlocked : " + pallier.name + " pour tous les produits");
+      this.popMessage(pallier.name + " pour tous les produits");
     }
     else {
       for (let produit of this.produits) {
@@ -123,11 +127,12 @@ export class AppComponent {
 
   //acheter les upgrades
   purchaseUpgrade(upgrade: Pallier) {
-    if (this.world.money >= upgrade.seuil && (upgrade.idcible==0 || this.world.products.product[upgrade.idcible - 1].quantite > 0)) {
+    if (this.world.money >= upgrade.seuil && (upgrade.idcible == 0 || this.world.products.product[upgrade.idcible - 1].quantite > 0)) {
+      this.world.upgrades.pallier[upgrade.idcible-1].unlocked = true;
       upgrade.unlocked = true;
       this.world.money -= upgrade.seuil;
-      this.getUpgrade(upgrade);
       this.popMessage(upgrade.name + " est débloquée");
+      console.log('JULUJULJULJ'+upgrade.idcible);
       this.service.putUpgrade(upgrade);
     }
   }

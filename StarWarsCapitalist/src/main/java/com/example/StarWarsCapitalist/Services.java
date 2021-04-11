@@ -152,7 +152,7 @@ public class Services {
         // aller chercher le monde qui correspond au joueur
         World world = getWorld(username);
         // trouver dans ce monde, le pallier équivalent à celui passé en paramètre
-        PallierType pallier = findUpgradeByName(world, newpallier.getName());
+        PallierType pallier = findUpgradeByName(world, newpallier.getIdcible());
         if (pallier == null) {
             return false;
         }
@@ -168,7 +168,7 @@ public class Services {
             if (pallier.getTyperatio() == TyperatioType.GAIN) {
                 product.setRevenu(product.getRevenu() * pallier.getRatio());
             }
-        } //upgarde pour tous les produits (allunlock)
+        } //upgrade pour tous les produits (allunlock)
         else {
             for (ProductType product : world.getProducts().getProduct()) {
                 if (pallier.getTyperatio() == TyperatioType.VITESSE) {
@@ -204,9 +204,14 @@ public class Services {
         return null;
     }
 
-    private PallierType findUpgradeByName(World world, String name) {
+    private PallierType findUpgradeByName(World world, int id) {
         for (PallierType pallier : world.getUpgrades().getPallier()) {
-            if (pallier.getName().equals(name)) {
+            if (pallier.getIdcible()==id) {
+                return pallier;
+            }
+        }
+        for (PallierType pallier : world.getAllunlocks().getPallier()) {
+            if (pallier.getIdcible()==id) {
                 return pallier;
             }
         }

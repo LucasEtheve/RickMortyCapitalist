@@ -11,7 +11,7 @@ and open the template in the editor.
     xsi:noNamespaceSchemaLocation='file:/D:/ISIS/4A/RickEtMortyCapitalist/RickMortyCapitalist/StarWarsCapitalist/src/main/java/com/example/StarWarsCapitalist/worldSchema.xsd'>
     <name>Rick and Morty Capitalist</name>
     <logo>icones/RMWorld.png</logo>
-    <money>150000000000000</money>
+    <money>4</money>
     <score></score>
     <totalangels></totalangels>
     <activeangels></activeangels>
@@ -48,15 +48,6 @@ and open the template in the editor.
                     <typeratio>gain</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
-                <pallier>
-                    <name>seuil 150</name>
-                    <logo>icones/Jerry.png</logo>
-                    <seuil>150</seuil>
-                    <idcible>1</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
-                    <unlocked>False</unlocked>
-                </pallier>
             </palliers>
         </product>
         <product>
@@ -87,15 +78,6 @@ and open the template in the editor.
                     <idcible>2</idcible>
                     <ratio>2</ratio>
                     <typeratio>gain</typeratio>
-                    <unlocked>False</unlocked>
-                </pallier>
-                <pallier>
-                    <name>seuil 150</name>
-                    <logo>icones/MegaSeed.png</logo>
-                    <seuil>150</seuil>
-                    <idcible>2</idcible>
-                    <ratio>2</ratio>
-                    <typeratio>ange</typeratio>
                     <unlocked>False</unlocked>
                 </pallier>
             </palliers>
